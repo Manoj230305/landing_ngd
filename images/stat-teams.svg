@@ -1,0 +1,27 @@
+<svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ringGrad" x1="0%" y1="20%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#84D83C" />
+      <stop offset="30%" stop-color="#46C69A" />
+      <stop offset="70%" stop-color="#2CA6EC" />
+      <stop offset="100%" stop-color="#239DE3" />
+    </linearGradient>
+    <filter id="badgeShadow" x="-15%" y="-15%" width="130%" height="135%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="5" stdDeviation="4.5" flood-color="#000000" flood-opacity="0.06" />
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#29A8EB" flood-opacity="0.10" />
+    </filter>
+  </defs>
+  <!-- Background with Shadow & Gradient Ring -->
+  <g filter="url(#badgeShadow)">
+    <circle cx="38" cy="37" r="31" fill="#FFFFFF" stroke="url(#ringGrad)" stroke-width="3.4" />
+  </g>
+  <!-- Icon -->
+  <g stroke="#26A4EB" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    
+    <path d="M23 33.5 h6.5 l4.5 4.5" />
+    <path d="M52 33.5 h-6.5 l-7 7 -3 -3 2.5 -2.5" />
+    <path d="M39.5 36.5 l4.5 4.5 a1.8 1.8 0 0 1 0 2.5 l-0.5 0.5 a1.8 1.8 0 0 1 -2.5 0 l-4.5 -4.5" />
+    <path d="M26 38.5 l4 4 a1.8 1.8 0 0 0 2.5 0 l2 -2" />
+
+  </g>
+</svg>

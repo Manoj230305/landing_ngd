@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NGD - Premium SaaS &amp; Startup Template</title>
+  <meta name="description"
+    content="NexGenDev (NGD) is a premium template crafted for SaaS products, productivity tools, and task management platforms. Built to help you launch fast and convert visitors into users.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/newnex.png">
+  <link rel="apple-touch-icon" href="images/newnex.png">
+
+  <!-- Google Fonts: Inter & Source Serif 4 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Serif+4:ital,opsz,wght@1,8..60,400..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Ambient Background Accents -->
+  <div class="ambient-glow glow-top"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="#" class="brand-logo" aria-label="NGD Home">
+        <div class="brand-icon">
+          <img src="images/newnex.png" alt="NGD" width="28" height="28" style="border-radius: 8px; display: block; object-fit: cover;">
+        </div>
+        <span class="brand-name">NGD</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="#features" class="nav-link active">Features</a>
+        <a href="#integrations" class="nav-link">Integrations</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#about" class="nav-link">Contact</a>
+        <div class="nav-dropdown">
+          <a href="#faq" class="nav-link dropdown-toggle">
+            Resources
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#about" class="dropdown-item">About Us</a>
+            <a href="#comparison" class="dropdown-item">Comparison</a>
+            <a href="#faq" class="dropdown-item">FAQs</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-actions">
+        <button class="btn btn-outline waitlist-trigger" type="button">Join Waitlist</button>
+        <a href="#pricing" class="btn btn-dark">Buy this Template</a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <a href="#features" class="mobile-link">Features</a>
+        <a href="#integrations" class="mobile-link">Integrations</a>
+        <a href="#pricing" class="mobile-link">Pricing</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#faq" class="mobile-link">FAQs</a>
+        <div class="mobile-actions">
+          <button class="btn btn-outline waitlist-trigger w-full" type="button">Join Waitlist</button>
+          <a href="#pricing" class="btn btn-dark w-full">Buy this Template</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <!-- Badge -->
+        <div class="pill-badge hero-badge">
+          <span class="pill-highlight">100K+</span> tasks completed every week
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="hero-title">
+          Launch your SaaS<br>
+          Website <span class="serif-italic">in Days</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-subtitle">
+          Organize, track, and complete projects faster with a powerful platform built for teams of all sizes.
+        </p>
+
+        <!-- CTA Button -->
+        <div class="hero-cta-wrap">
+          <button class="btn btn-hero-cta waitlist-trigger" type="button">Join Waitlist</button>
+        </div>
+
+        <!-- Social Proof Rating -->
+        <div class="hero-reviews">
+          <div class="google-rating">
+            <svg class="google-icon" viewBox="0 0 24 24" width="16" height="16">
+              <path fill="#3B99FC"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+              <path fill="#3B99FC"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+              <path fill="#3B99FC"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+              <path fill="#3B99FC"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+            </svg>
+            <div class="stars stars-sky">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <span class="review-divider"></span>
+            <span class="reviews-text">Based on 25,000+ reviews</span>
+          </div>
+        </div>
+
+        <!-- Hero App Mockup -->
+        <div class="hero-mockup-section">
+          <div class="hero-glow-bg">
+            <img src="images/eghepTEPMM1sApJCMQ1VqSaKOY.png" alt="" class="hero-glow-img">
+          </div>
+          <div class="hero-mockup-perspective" id="heroMockupPerspective">
+            <div class="hero-mockup-card" id="heroMockupCard">
+              <div class="mockup-frame-bg">
+                <img src="images/qK9XWarVImvIhsoEr4mUFV3650M.png" alt="" class="mockup-frame-img">
+              </div>
+              <div class="mockup-dashboard-content">
+                <img src="images/UKzIr5paVaLFJWHAumrNbRIxczk.png" alt="NGD CRM Dashboard" class="dashboard-img">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOS MARQUEE -->
+    <section class="logos-section">
+      <div class="container text-center">
+        <h4 class="logos-heading">Trusted by teams everywhere</h4>
+        <div class="marquee-wrapper">
+          <div class="marquee-track">
+            <!-- Set 1 -->
+            <div class="logo-item"><img src="images/5nYj2i6tU9yLEAOJRESakSDvp0g.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/rup7262w3KHAvtyJB0CnC6FWHSc.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/0EIEmxtogiwTpTo7lEjARtFLa8.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/RK0C79148LnQefLLc4p1LjvgJ20.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/xdtXSfrXwwIszE0AYnYks93MQUY.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+
+            <!-- Set 2 for seamless infinite scroll -->
+            <div class="logo-item"><img src="images/5nYj2i6tU9yLEAOJRESakSDvp0g.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/rup7262w3KHAvtyJB0CnC6FWHSc.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/0EIEmxtogiwTpTo7lEjARtFLa8.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/RK0C79148LnQefLLc4p1LjvgJ20.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/xdtXSfrXwwIszE0AYnYks93MQUY.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+
+            <!-- Set 3 for seamless loop -->
+            <div class="logo-item"><img src="images/5nYj2i6tU9yLEAOJRESakSDvp0g.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/rup7262w3KHAvtyJB0CnC6FWHSc.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/0EIEmxtogiwTpTo7lEjARtFLa8.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/RK0C79148LnQefLLc4p1LjvgJ20.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+            <div class="logo-item"><img src="images/xdtXSfrXwwIszE0AYnYks93MQUY.svg" alt="Client Logo"
+                class="brand-logo-img"></div>
+            <div class="logo-sep">|</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES BENTO GRID -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <div class="pill-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14" />
+            </svg>
+            Powerful Features
+          </div>
+          <h2 class="section-title">
+            Everything You Need<br>
+            to <span class="serif-italic">Stay on Track</span>
+          </h2>
+          <p class="section-subtitle">
+            NGD combines clarity and speed so your team can focus on getting things done.
+          </p>
+        </div>
+
+        <!-- Bento Grid: 2 on top, 3 on bottom -->
+        <div class="bento-grid">
+          <!-- Bento Card 1: Smart Boards (Wide) -->
+          <div class="bento-card bento-wide">
+            <div class="bento-preview-top preview-smart-boards">
+              <div class="sb-col sb-col-left">
+                <img src="images/Ntog7R5TGhqmfPJiEHINlQfk.png" alt="To Do Kanban column">
+              </div>
+              <div class="sb-col sb-col-center">
+                <img src="images/O7slyMQCb3o5zpnYVg33D7xzd4.png" alt="In Review Kanban column">
+              </div>
+              <div class="sb-col sb-col-right">
+                <img src="images/F8f0mKt3Lz1TrTMw1Ez2swxL4.png" alt="Done Kanban column">
+              </div>
+              <div class="bento-mask bento-mask-bottom"></div>
+              <div class="bento-mask bento-mask-left"></div>
+              <div class="bento-mask bento-mask-right"></div>
+            </div>
+            <div class="bento-content">
+              <h3 class="bento-title">Smart Boards</h3>
+              <p class="bento-desc">Visualize tasks with flexible Kanban, list, and timeline views.</p>
+            </div>
+          </div>
+
+          <!-- Bento Card 2: Seamless Collaboration (Wide) -->
+          <div class="bento-card bento-wide">
+            <div class="bento-preview-top preview-collab">
+              <!-- Center Card -->
+              <div class="collab-center-wrap">
+                <img src="images/PVF60gJL2lj7qxtkuEtNE7RpPM.png" alt="Collaboration canvas">
+              </div>
+              <!-- 4 Curved Connector Lines with Traveling Light Pulses -->
+              <div class="collab-line collab-line-tl">
+                <svg width="100%" height="100%" viewBox="0 0 56 34" fill="none">
+                  <path d="M 0 3 H 18 C 30 3, 32 31, 44 31 H 56" stroke="#E5E7EB" stroke-width="1.5"
+                    stroke-linecap="round" />
+                  <path class="pulse-beam beam-orange" d="M 0 3 H 18 C 30 3, 32 31, 44 31 H 56" stroke="#FF9500"
+                    stroke-width="2.2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="collab-line collab-line-bl">
+                <svg width="100%" height="100%" viewBox="0 0 56 34" fill="none">
+                  <path d="M 0 31 H 18 C 30 31, 32 3, 44 3 H 56" stroke="#E5E7EB" stroke-width="1.5"
+                    stroke-linecap="round" />
+                  <path class="pulse-beam beam-blue" d="M 0 31 H 18 C 30 31, 32 3, 44 3 H 56" stroke="#007AFF"
+                    stroke-width="2.2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="collab-line collab-line-tr">
+                <svg width="100%" height="100%" viewBox="0 0 56 34" fill="none">
+                  <path d="M 56 3 H 38 C 26 3, 24 31, 12 31 H 0" stroke="#E5E7EB" stroke-width="1.5"
+                    stroke-linecap="round" />
+                  <path class="pulse-beam beam-crimson" d="M 56 3 H 38 C 26 3, 24 31, 12 31 H 0" stroke="#FF2D55"
+                    stroke-width="2.2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <div class="collab-line collab-line-br">
+                <svg width="100%" height="100%" viewBox="0 0 56 34" fill="none">
+                  <path d="M 56 31 H 38 C 26 31, 24 3, 12 3 H 0" stroke="#E5E7EB" stroke-width="1.5"
+                    stroke-linecap="round" />
+                  <path class="pulse-beam beam-purple" d="M 56 31 H 38 C 26 31, 24 3, 12 3 H 0" stroke="#AF52DE"
+                    stroke-width="2.2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <!-- 4 Floating Chips -->
+              <div class="collab-chip chip-comment">
+                <img src="images/rJB4WUvpToRgfSYiQA8OF6UwHQ.png" alt="Comment">
+              </div>
+              <div class="collab-chip chip-attach">
+                <img src="images/pqYKCNiylewDZzKfEAnc3NVXBg4.png" alt="Attach file">
+              </div>
+              <div class="collab-chip chip-assignee">
+                <img src="images/F7Dx3fDm3lNrbZgQrnHSp4IzJQQ.png" alt="Assignee">
+              </div>
+              <div class="collab-chip chip-timeline">
+                <img src="images/oJeo6kXEVp4SQtqNLdgZazgv7zk.png" alt="Timeline">
+              </div>
+              <div class="bento-mask bento-mask-bottom"></div>
+            </div>
+            <div class="bento-content">
+              <h3 class="bento-title">Seamless Collaboration</h3>
+              <p class="bento-desc">Work seamlessly with your team - assign tasks, share files, and chat in real time.
+              </p>
+            </div>
+          </div>
+
+          <!-- Bento Card 3: Deadline Control -->
+          <div class="bento-card">
+            <div class="bento-preview-top preview-deadlines">
+              <div class="deadline-stack">
+                <div class="dl-item dl-research">
+                  <img src="images/9nBGqftHCKxMtRanm8l5MD6dEA.png" alt="Research milestone">
+                </div>
+                <div class="dl-item dl-design">
+                  <img src="images/M7kZbdT2p2vb0rAoLprA5jxQqc.png" alt="Design & Dev milestone">
+                </div>
+                <div class="dl-item dl-maint">
+                  <img src="images/cdl3sfflLSPvjNP6zzHbfg5NYc.png" alt="Maintenance milestone">
+                </div>
+              </div>
+              <div class="bento-mask bento-mask-bottom"></div>
+            </div>
+            <div class="bento-content">
+              <h3 class="bento-title">Deadline Control</h3>
+              <p class="bento-desc">Set due dates, reminders, and never miss a milestone.</p>
+            </div>
+          </div>
+
+          <!-- Bento Card 4: Progress Tracking -->
+          <div class="bento-card">
+            <div class="bento-preview-top preview-progress">
+              <div class="progress-wrap">
+                <img src="images/sFfQbdJRCKkz52BqBPOtl2jhE.png" alt="Work summary progress">
+              </div>
+              <div class="bento-mask bento-mask-bottom"></div>
+            </div>
+            <div class="bento-content">
+              <h3 class="bento-title">Progress Tracking</h3>
+              <p class="bento-desc">Monitor completion with status updates and clear indicators.</p>
+            </div>
+          </div>
+
+          <!-- Bento Card 5: Integrations -->
+          <div class="bento-card">
+            <div class="bento-preview-top preview-integrations">
+              <div class="integrations-orbit-wrap">
+                <img src="images/AIHl0btI97ExfKaF8I8cCUzD6Fs.png" alt="App Integrations orbit">
+              </div>
+            </div>
+            <div class="bento-content">
+              <h3 class="bento-title">Integrations</h3>
+              <p class="bento-desc">Connect with Slack, Google Drive, Notion, and more.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HORIZONTAL FEATURE ICONS & STATS: WORK SMARTER, NOT HARDER -->
+    <section class="feature-pills-section" id="smarter">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="feature-pills-header">
+          <h2 class="feature-pills-title">Work Smarter, <span class="serif-italic-accent">Not Harder</span></h2>
+        </div>
+
+        <!-- 6 Feature Icon Cards with edge mask -->
+        <div class="feature-pills-mask-wrapper">
+          <div class="feature-pills-track">
+            <div class="smarter-card">
+              <div class="smarter-icon-wrap">
+                <img src="images/lT0fkuVbKbQcKHsmAWQe4HDsrA.svg" alt="Notifications" class="smarter-icon">
+              </div>
+              <span class="smarter-name">Notifications</span>
+            </div>
+
+            <div class="smarter-card">
+              <div class="smarter-icon-wrap">
+                <img src="images/6tPTiCIHP8ZgCC2o3FwZ6fBtNPo.svg" alt="Live Progress" class="smarter-icon">
+              </div>
+              <span class="smarter-name">Live Progress</span>
+            </div>
+
+            <div class="smarter-card">
+              <div class="smarter-icon-wrap">
+                <img src="images/vKhUCVmRyGb43eDyRiBWJiWB5Z4.svg" alt="Analytics" class="smarter-icon">
+              </div>
+              <span class="smarter-name">Analytics</span>
+            </div>
+
+            <div class="smarter-card">
+              <div class="smarter-icon-wrap">
+                <img src="images/ir2HDQMmDIcZKFeUvwToIPLGYss.svg" alt="Fast Setup" class="smarter-icon">
+              </div>
+              <span class="smarter-name">Fast Setup</span>
+            </div>
+
+            <div class="smarter-card">
+              <div class="smarter-icon-wrap">
+                <img src="images/4mFzA3Uvepl8pLAH7IEyxKSvU.svg" alt="Always Synced" class="smarter-icon">
+              </div>
+              <span class="smarter-name">Always Synced</span>
+            </div>
+
+            <div class="smarter-card">
+              <div class="smarter-icon-wrap">
+                <img src="images/2fttIDWN9sJMyH48RK3IzkPA8z0.svg" alt="Timeline View" class="smarter-icon">
+              </div>
+              <span class="smarter-name">Timeline View</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Big stats summary banner / Trust Container -->
+        <div class="trust-banner-card">
+          <div class="trust-banner-left">
+            <h3 class="trust-title">Trusted by 50,000+<br>teams worldwide</h3>
+            <p class="trust-desc">Join thousands of businesses who use NGD<br class="desktop-only-br">to stay organized
+              and deliver projects on time.</p>
+          </div>
+          <div class="trust-banner-right">
+            <div class="trust-stat-box">
+              <div class="trust-stat-value">500k+</div>
+              <div class="trust-stat-label">Tasks completed every month with NGD!</div>
+            </div>
+            <div class="trust-stat-box">
+              <div class="trust-stat-value">4.9 / 5</div>
+              <div class="trust-rating-group">
+                <div class="trust-stars-wrap">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#FF5E3A">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#FF5E3A">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#FF5E3A">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#FF5E3A">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="#FF5E3A">
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                </div>
+                <div class="trust-stat-label">25,000+ Rating</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DARK SECTION: WORKS WITH YOUR FAVORITE TOOLS -->
+    <section class="integrations-section" id="integrations">
+      <div class="container">
+        <div class="dark-card integrations-card">
+          <div class="dark-card-header text-center">
+            <div class="pill-badge pill-dark">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              Integrations
+            </div>
+            <h2 class="dark-title">
+              Works With Your<br>
+              Favorite <span class="serif-italic serif-gradient">Tools</span>
+            </h2>
+            <p class="dark-subtitle">
+              NGD fits into your workflow, not the other way around.
+            </p>
+          </div>
+
+          <!-- Interactive Integration Diagram -->
+          <div class="integration-tree-wrapper">
+            <!-- Center NGD Badge -->
+            <div class="integration-hub">
+              <div class="hub-icon">
+                <img src="images/newnex.png" alt="NGD" width="48" height="48" style="border-radius: 12px; display: block; object-fit: cover;">
+              </div>
+            </div>
+
+            <!-- Connected apps surrounding hub -->
+            <div class="apps-grid">
+              <!-- Slack -->
+              <div class="app-card app-slack">
+                <div class="app-icon-wrap bg-slack">
+                  <svg viewBox="0 0 24 24" width="28" height="28">
+                    <path fill="#E01E5A" d="M6 15a2 2 0 1 1-2-2h2v2zm1 0a2 2 0 1 1 2 2v-5H7v3z" />
+                    <path fill="#36C5F0" d="M9 6a2 2 0 1 1 2-2v2H9zm0 1a2 2 0 1 1-2 2h5V7H9z" />
+                    <path fill="#2EB67D" d="M18 9a2 2 0 1 1 2 2h-2V9zm-1 0a2 2 0 1 1-2-2v5h3V9z" />
+                    <path fill="#ECB22E" d="M15 18a2 2 0 1 1-2 2v-2h2zm0-1a2 2 0 1 1 2-2h-5v3h3z" />
+                  </svg>
+                </div>
+                <div class="app-name">Slack</div>
+              </div>
+
+              <!-- Mailchimp -->
+              <div class="app-card app-mailchimp">
+                <div class="app-icon-wrap bg-mailchimp">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#FFE01B">
+                    <circle cx="12" cy="12" r="10" fill="#FFE01B" />
+                    <path d="M8 11a2 2 0 0 1 4 0v1H8v-1zm4 0a2 2 0 0 1 4 0v1h-4v-1z" fill="#000" />
+                    <path d="M7 15s2 2 5 2 5-2 5-2" stroke="#000" stroke-width="1.5" fill="none" />
+                  </svg>
+                </div>
+                <div class="app-name">Mailchimp</div>
+              </div>
+
+              <!-- Zapier -->
+              <div class="app-card app-zapier">
+                <div class="app-icon-wrap bg-zapier">
+                  <span class="zapier-asterisk">✱</span>
+                </div>
+                <div class="app-name">Zapier</div>
+              </div>
+
+              <!-- Google Sheets -->
+              <div class="app-card app-sheets">
+                <div class="app-icon-wrap bg-sheets">
+                  <svg viewBox="0 0 24 24" width="28" height="28">
+                    <rect width="24" height="24" rx="4" fill="#0F9D58" />
+                    <rect x="6" y="7" width="12" height="10" rx="1" fill="#fff" />
+                    <line x1="6" y1="12" x2="18" y2="12" stroke="#0F9D58" stroke-width="1.5" />
+                    <line x1="12" y1="7" x2="12" y2="17" stroke="#0F9D58" stroke-width="1.5" />
+                  </svg>
+                </div>
+                <div class="app-name">Sheets</div>
+              </div>
+
+              <!-- Figma -->
+              <div class="app-card app-figma">
+                <div class="app-icon-wrap bg-figma">
+                  <svg viewBox="0 0 24 24" width="28" height="28">
+                    <path fill="#F24E1E" d="M8 3h4v4H8z" />
+                    <path fill="#FF7262" d="M12 3h4a4 4 0 0 1 0 8h-4V3z" />
+                    <path fill="#A259FF" d="M8 7h4v4H8z" />
+                    <path fill="#1ABCFE" d="M8 11h4v4H8z" />
+                    <path fill="#0ACF83" d="M12 15a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" />
+                  </svg>
+                </div>
+                <div class="app-name">Figma</div>
+              </div>
+
+              <!-- GitHub -->
+              <div class="app-card app-github">
+                <div class="app-icon-wrap bg-github">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </div>
+                <div class="app-name">GitHub</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="pill-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+            </svg>
+            Testimonial
+          </div>
+          <h2 class="section-title">
+            What Our Users Say
+          </h2>
+          <p class="section-subtitle">
+            Teams of all sizes rely on NGD to simplify their work.
+          </p>
+        </div>
+
+        <!-- Testimonials Carousel -->
+        <div class="testimonial-carousel-wrap">
+          <div class="testimonial-track" id="testimonialTrack">
+            <!-- Review 1: Josh Klein -->
+            <div class="testimonial-card card-bg-josh">
+              <div class="card-stars">
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+              </div>
+              <p class="test-quote">“We tried other project management tools, but they always felt bloated. This just
+                feels simple and powerful at the same time.”</p>
+              <div class="test-author">
+                <img class="author-avatar" src="images/qjgDGZj1YLeh1AgbXWd8Goz4YUc.png" alt="Josh Klein" width="48"
+                  height="48" loading="lazy">
+                <div class="author-details">
+                  <div class="author-name">Josh Klein</div>
+                  <div class="author-role">Marketing Director</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 2: Hana Suzuki -->
+            <div class="testimonial-card card-bg-hana">
+              <div class="card-stars">
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+              </div>
+              <p class="test-quote">“The interface is so clean my team didn’t even need training. We set it up in a day
+                and haven’t looked back.”</p>
+              <div class="test-author">
+                <img class="author-avatar" src="images/1fHxy7FrfQZNjBF8KgZPTKquw.png" alt="Hana Suzuki" width="48"
+                  height="48" loading="lazy">
+                <div class="author-details">
+                  <div class="author-name">Hana Suzuki</div>
+                  <div class="author-role">Product Manager</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 3: Ahmed Rahman -->
+            <div class="testimonial-card card-bg-ahmed">
+              <div class="card-stars">
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+              </div>
+              <p class="test-quote">“Our workflow used to feel scattered across too many tools. Now, everything’s in one
+                place and projects move on time.”</p>
+              <div class="test-author">
+                <img class="author-avatar" src="images/WZtyRZuZuuhCm9Zo47Ue7DkCmsE.png" alt="Ahmed Rahman" width="48"
+                  height="48" loading="lazy">
+                <div class="author-details">
+                  <div class="author-name">Ahmed Rahman</div>
+                  <div class="author-role">Startup Founder</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 4: Sophia Bennett -->
+            <div class="testimonial-card card-bg-sophia">
+              <div class="card-stars">
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+              </div>
+              <p class="test-quote">“I finally feel in control of deadlines. No more missed tasks, no more guessing
+                who’s doing what.”</p>
+              <div class="test-author">
+                <img class="author-avatar" src="images/aYFQIaOtwzzZ6zhOatlybGiR1ro.png" alt="Sophia Bennett" width="48"
+                  height="48" loading="lazy">
+                <div class="author-details">
+                  <div class="author-name">Sophia Bennett</div>
+                  <div class="author-role">Operations Lead</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Review 5: Leo Davis -->
+            <div class="testimonial-card card-bg-leo">
+              <div class="card-stars">
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+                <svg width="15" height="15" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                    fill="#47AAFD" />
+                </svg>
+              </div>
+              <p class="test-quote">“Our remote team works across 4 different time zones, and it keeps us perfectly in
+                sync. That’s priceless.”</p>
+              <div class="test-author">
+                <img class="author-avatar" src="images/6kO1dlRzsKwsWaTOcLkg6PMHUes.png" alt="Leo Davis" width="48"
+                  height="48" loading="lazy">
+                <div class="author-details">
+                  <div class="author-name">Leo Davis</div>
+                  <div class="author-role">Creative Lead</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Nav Buttons -->
+          <div class="carousel-controls">
+            <button class="carousel-btn prev-btn" id="prevTestimonial" aria-label="Previous Testimonial">
+              <img src="images/bnJkdkDWLJVC5lk944HnEHJb0w.svg" alt="Previous" width="32" height="33">
+            </button>
+            <button class="carousel-btn next-btn" id="nextTestimonial" aria-label="Next Testimonial">
+              <img src="images/nxtkkL0oNlJbpVlJ5LaN3cepls.svg" alt="Next" width="32" height="33">
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS / METRICS SECTION -->
+    <section class="stats-section" id="metrics">
+      <div class="stats-divider-mark mark-top">+</div>
+      <div class="container">
+        <div class="stats-grid">
+          <!-- Stat 1: Tasks completed -->
+          <div class="stat-item">
+            <div class="stat-icon-wrap">
+              <img src="images/stat-tasks.png" alt="Tasks completed icon" width="72" height="72">
+            </div>
+            <div class="stat-number" data-target="300" data-suffix="+">300+</div>
+            <div class="stat-label">Tasks completed</div>
+          </div>
+
+          <!-- Stat 2: Teams onboarded -->
+          <div class="stat-item">
+            <div class="stat-icon-wrap">
+              <img src="images/stat-teams.png" alt="Teams onboarded icon" width="72" height="72">
+            </div>
+            <div class="stat-number" data-target="50" data-suffix="k+">50k+</div>
+            <div class="stat-label">Teams onboarded</div>
+          </div>
+
+          <!-- Stat 3: User satisfaction -->
+          <div class="stat-item">
+            <div class="stat-icon-wrap">
+              <img src="images/stat-satisfaction.png" alt="User satisfaction icon" width="72" height="72">
+            </div>
+            <div class="stat-number" data-target="98" data-suffix="%">98%</div>
+            <div class="stat-label">User satisfaction</div>
+          </div>
+
+          <!-- Stat 4: Integrations -->
+          <div class="stat-item">
+            <div class="stat-icon-wrap">
+              <img src="images/stat-integrations.png" alt="Integrations icon" width="72" height="72">
+            </div>
+            <div class="stat-number" data-target="100" data-suffix="+">100+</div>
+            <div class="stat-label">Integrations</div>
+          </div>
+        </div>
+      </div>
+      <div class="stats-divider-mark mark-bottom">+</div>
+    </section>
+
+    <!-- FLEXIBLE PRICING SECTION -->
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="pill-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="5" rx="2" />
+              <line x1="2" x2="22" y1="10" y2="10" />
+            </svg>
+            Pricing
+          </div>
+          <h2 class="section-title">
+            Flexible Pricing for<br>
+            <span class="serif-italic">Every Teams</span>
+          </h2>
+          <p class="section-subtitle">
+            Choose the plan that fits your team’s workflow. Start free and scale as you grow.
+          </p>
+
+          <!-- Monthly / Yearly Billing Toggle -->
+          <div class="billing-toggle-wrapper">
+            <span class="billing-lbl active" id="monthlyLbl">Monthly billing</span>
+            <label class="switch" aria-label="Toggle Monthly and Yearly billing">
+              <input type="checkbox" id="billingToggle">
+              <span class="slider round"></span>
+            </label>
+            <span class="billing-lbl" id="yearlyLbl">
+              Yearly billing <span class="discount-badge">(save 20%)</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- 3 Pricing Cards -->
+        <div class="pricing-grid">
+          <!-- Tier 1: Starter -->
+          <div class="pricing-card">
+            <div class="pricing-card-inner">
+              <div class="plan-header header-starter">
+                <div class="plan-name">Starter</div>
+                <div class="plan-price">
+                  <span class="currency">$</span><span class="amount" data-monthly="0" data-yearly="0">0</span>
+                  <span class="period">/ forever</span>
+                </div>
+                <p class="plan-desc">Perfect for individuals and small teams.</p>
+                <button class="pricing-btn waitlist-trigger" type="button">Get Started</button>
+              </div>
+              <div class="plan-features">
+                <ul class="feature-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Up to 3 projects</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Unlimited tasks &amp; members</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Kanban, List &amp; Calendar views</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Due dates &amp; reminders</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Mobile access</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 2: Pro (Featured with Glowing Gradient Border) -->
+          <div class="pricing-card pricing-featured">
+            <div class="pricing-card-inner">
+              <div class="plan-header header-pro">
+                <div class="plan-name">Pro</div>
+                <div class="plan-price">
+                  <span class="currency">$</span><span class="amount" data-monthly="12" data-yearly="10">12</span>
+                  <span class="period">per member / month</span>
+                </div>
+                <p class="plan-desc">Best for growing teams and projects.</p>
+                <button class="pricing-btn waitlist-trigger" type="button">Start 14-day free trial</button>
+              </div>
+              <div class="plan-features">
+                <div class="feature-inherit-notice">Everything in Starter, plus:</div>
+                <ul class="feature-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Unlimited projects &amp; storage</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Advanced team collaboration</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Task dependencies &amp; priorities</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Recurring tasks</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Priority support</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Integrations</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier 3: Enterprise -->
+          <div class="pricing-card">
+            <div class="pricing-card-inner">
+              <div class="plan-header header-enterprise">
+                <div class="plan-name">Enterprise</div>
+                <div class="plan-price">
+                  <span class="currency">$</span><span class="amount" data-monthly="29" data-yearly="24">29</span>
+                  <span class="period">per member / month</span>
+                </div>
+                <p class="plan-desc">Built for large organizations needs.</p>
+                <button class="pricing-btn waitlist-trigger" type="button">Start 14-day free trial</button>
+              </div>
+              <div class="plan-features">
+                <div class="feature-inherit-notice">Everything in Pro, plus:</div>
+                <ul class="feature-list">
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Enterprise security &amp; SSO</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Dedicated account manager</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Custom workflows &amp; permissions</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Advanced analytics &amp; reporting</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>SLA &amp; dedicated onboarding</span>
+                  </li>
+                  <li>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M11.6666 3.5L5.24992 9.91667L2.33325 7" stroke="#47AAFD" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>API &amp; custom integrations</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing Guarantee Footnote -->
+        <div class="pricing-guarantee-banner">
+          <div class="pg-left">
+            <h3 class="pg-headline">Free 14-days trials</h3>
+          </div>
+          <div class="pg-badges">
+            <div class="pg-badge">
+              <img src="images/pmbqsgnrUOf2cx0DidXnw9tdBr4.svg" width="22" height="22" alt="Card Icon">
+              <span>No credit card required</span>
+            </div>
+            <div class="pg-badge">
+              <img src="images/tzeBCXFs5kykTwBXDfrKCEDgiA.svg" width="22" height="22" alt="Headphone Icon">
+              <span>1-1 Onboarding support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT US / TEAM SHOWCASE -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-header text-center">
+          <div class="pill-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="14" x="2" y="5" rx="2" />
+              <line x1="2" x2="22" y1="10" y2="10" />
+            </svg>
+            About Us
+          </div>
+          <h2 class="about-title">
+            The Team Behind <span class="serif-italic">NGD</span>
+          </h2>
+          <p class="about-subtitle">
+            We built NGD to give teams a calmer and<br class="desktop-br"> clearer way to manage work.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Left Column -->
+          <div class="about-col about-col-left">
+            <!-- Card 1: Total Teams Stat Card -->
+            <div class="about-card about-stat-card">
+              <div class="about-card-bg">
+                <img src="images/BN3qdkFZomIrCXpV29Y4AHbQc.png" alt="" aria-hidden="true">
+              </div>
+              <div class="about-stat-header">
+                <h3 class="about-stat-title">Total Teams</h3>
+                <p class="about-stat-desc">Empowering businesses to work smarter every day.</p>
+              </div>
+              <div class="about-stat-body">
+                <div class="about-stat-number">367k+</div>
+                <div class="about-stat-label">Active users worldwide</div>
+              </div>
+            </div>
+
+            <!-- Card 2: Modern Workspace Office Photo -->
+            <div class="about-card about-image-card about-office-card">
+              <img class="about-card-img" src="images/TUst0w1hf2W65XzDVwVHFJTmE.png"
+                alt="Clean and modern collaborative office workspace">
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="about-col about-col-right">
+            <!-- Card 3: Team Brainstorming Meeting Photo -->
+            <div class="about-card about-image-card about-meeting-card">
+              <img class="about-card-img" src="images/hVH0oA7E7GBJxL7vhobTrb9DsA.png"
+                alt="Productive team meeting and collaborating around a table">
+            </div>
+
+            <!-- Bottom Row: Testimonial + Team Member -->
+            <div class="about-bottom-row">
+              <!-- Card 4: Quote from Leo Davis -->
+              <div class="about-card about-quote-card">
+                <div class="about-card-bg">
+                  <img src="images/suvVxrYeMBLey9ehdocwyAukmQI.png" alt="" aria-hidden="true">
+                </div>
+                <div class="about-quote-content">
+                  <div class="about-stars" aria-label="5 out of 5 stars">
+                    <svg class="about-star-icon" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                        fill="#47AAFD" />
+                    </svg>
+                    <svg class="about-star-icon" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                        fill="#47AAFD" />
+                    </svg>
+                    <svg class="about-star-icon" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                        fill="#47AAFD" />
+                    </svg>
+                    <svg class="about-star-icon" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                        fill="#47AAFD" />
+                    </svg>
+                    <svg class="about-star-icon" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6.843 0C7.05 0 7.236 0.128 7.31 0.322L8.885 4.448L13.209 4.659C13.413 4.669 13.59 4.801 13.657 4.994C13.725 5.187 13.668 5.401 13.515 5.535L10.224 8.424L11.433 13.057C11.486 13.259 11.408 13.473 11.237 13.593C11.066 13.714 10.838 13.715 10.666 13.597L6.843 10.973L3.02 13.597C2.847 13.715 2.62 13.713 2.449 13.593C2.278 13.474 2.2 13.26 2.252 13.058L3.462 8.424L0.171 5.535C0.017 5.401 -0.039 5.187 0.028 4.994C0.095 4.801 0.273 4.669 0.476 4.659L4.801 4.447L6.375 0.322C6.449 0.128 6.635 0 6.843 0Z"
+                        fill="#47AAFD" />
+                    </svg>
+                  </div>
+                  <p class="about-quote-text">
+                    “Our remote team works across 4 different time zones, and it keeps us perfectly in sync. That’s
+                    priceless.”
+                  </p>
+                  <div class="about-author">
+                    <div class="about-author-avatar-wrap">
+                      <img class="about-author-avatar" src="images/6kO1dlRzsKwsWaTOcLkg6PMHUes.png" alt="Leo Davis">
+                    </div>
+                    <div class="about-author-meta">
+                      <div class="about-author-name">John Doe</div>
+                      <div class="about-author-role">Creative Lead</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 5: Smiling Team Member Image -->
+              <div class="about-card about-image-card about-member-card">
+                <img class="about-card-img" src="images/1t9lGpQ6o3H9Va5b621MvwMEesc.png"
+                  alt="Leo Davis smiling at laptop workspace">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON SECTION -->
+    <section class="comparison-section" id="comparison">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="pill-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+              <path d="M4 22h16"></path>
+              <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+              <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+            </svg>
+            Comparison
+          </div>
+          <h2 class="section-title">
+            Why Choose <span class="serif-italic">NGD</span>
+          </h2>
+          <p class="section-subtitle">
+            Simplicity without compromise. NGD combines<br class="desktop-br"> powerful features with an intuitive
+            interface.
+          </p>
+        </div>
+
+        <div class="comp-container">
+          <!-- V/S Connecting Badge (Desktop) -->
+          <div class="comp-vs-badge" aria-hidden="true">
+            <img src="images/huShNmzstcgX2PP2R8aVYUN8kE.svg" alt="V/S">
+          </div>
+
+          <!-- Other Platforms Card -->
+          <div class="comp-card-wrapper comp-wrapper-others">
+            <div class="comp-card-inner">
+              <div class="comp-card-header comp-header-others">
+                <h3 class="comp-card-title">Other Platforms</h3>
+              </div>
+              <ul class="comp-features-list">
+                <li class="comp-feature-item">
+                  <div class="comp-checkbox comp-checkbox-empty"></div>
+                  <span class="comp-feature-text">Overly complex interfaces</span>
+                </li>
+                <li class="comp-feature-item">
+                  <div class="comp-checkbox comp-checkbox-empty"></div>
+                  <span class="comp-feature-text">Limited flexibility in task setup</span>
+                </li>
+                <li class="comp-feature-item">
+                  <div class="comp-checkbox comp-checkbox-empty"></div>
+                  <span class="comp-feature-text">Disconnected tools and integrations</span>
+                </li>
+                <li class="comp-feature-item">
+                  <div class="comp-checkbox comp-checkbox-empty"></div>
+                  <span class="comp-feature-text">Lack of advanced collaboration features</span>
+                </li>
+                <li class="comp-feature-item">
+                  <div class="comp-checkbox comp-checkbox-empty"></div>
+                  <span class="comp-feature-text">Slow or outdated progress tracking</span>
+                </li>
+                <li class="comp-feature-item">
+                  <div class="comp-checkbox comp-checkbox-empty"></div>
+                  <span class="comp-feature-text">Shallow reporting &amp; insights</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- V/S Mobile Pill -->
+          <div class="comp-vs-mobile">V/S</div>
+
+          <!-- NGD Card -->
+          <div class="comp-card-wrapper comp-wrapper-ngd">
+            <div class="comp-card-inner">
+              <div class="comp-card-header comp-header-ngd">
+                <img class="comp-header-bg" src="images/8QcrrJBdgJYjblK4aZQqBAo9bdg.png" alt="" aria-hidden="true">
+                <div class="comp-logo-wrap">
+                  <img class="comp-logo-img" src="images/logo.png" alt="NGD">
+                </div>
+              </div>
+              <ul class="comp-features-list">
+                <li class="comp-feature-item">
+                  <img class="comp-check-icon" src="images/Tnc2wphr8Yxa8SLERqqG4EZZ2U.svg" alt="✓">
+                  <span class="comp-feature-text">Real-time progress tracking</span>
+                </li>
+                <li class="comp-feature-item">
+                  <img class="comp-check-icon" src="images/Tnc2wphr8Yxa8SLERqqG4EZZ2U.svg" alt="✓">
+                  <span class="comp-feature-text">Clean, intuitive design teams adopt</span>
+                </li>
+                <li class="comp-feature-item">
+                  <img class="comp-check-icon" src="images/Tnc2wphr8Yxa8SLERqqG4EZZ2U.svg" alt="✓">
+                  <span class="comp-feature-text">Fully customizable boards &amp; workflows</span>
+                </li>
+                <li class="comp-feature-item">
+                  <img class="comp-check-icon" src="images/Tnc2wphr8Yxa8SLERqqG4EZZ2U.svg" alt="✓">
+                  <span class="comp-feature-text">Seamless integrations with 200+ apps</span>
+                </li>
+                <li class="comp-feature-item">
+                  <img class="comp-check-icon" src="images/Tnc2wphr8Yxa8SLERqqG4EZZ2U.svg" alt="✓">
+                  <span class="comp-feature-text">Built-in collaboration with files &amp; chat</span>
+                </li>
+                <li class="comp-feature-item">
+                  <img class="comp-check-icon" src="images/Tnc2wphr8Yxa8SLERqqG4EZZ2U.svg" alt="✓">
+                  <span class="comp-feature-text">Advanced productivity analytics</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="comp-cta text-center">
+          <button class="btn btn-dark comp-cta-btn waitlist-trigger" type="button">Start 14-day free trial</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DARK PRODUCT OVERVIEW SECTION -->
+    <section class="overview-section">
+      <div class="container">
+        <div class="dark-card overview-card">
+          <div class="dark-card-header text-center">
+            <div class="pill-badge pill-dark">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+              </svg>
+              Product Overview
+            </div>
+            <h2 class="dark-title">
+              One Platform<br>
+              <span class="serif-italic serif-gradient">Endless Clarity</span>
+            </h2>
+            <p class="dark-subtitle">
+              Plan, prioritize, and progress - all in a clean workspace built for productivity.
+            </p>
+
+            <div class="overview-features-row">
+              <div class="of-item">
+                <span class="of-badge">Team Sync</span>
+                <span>Keep team aligned with shared task views.</span>
+              </div>
+              <div class="of-item">
+                <span class="of-badge">Quick Actions</span>
+                <span>Add, assign, and update tasks instantly.</span>
+              </div>
+              <div class="of-item">
+                <span class="of-badge">Smart Alerts</span>
+                <span>Get notified before deadlines slip.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Perspective Mockup View in Dark Theme -->
+          <div class="overview-mockup-wrap">
+            <div class="mockup-window dark-mockup-inner">
+              <div class="kanban-col-preview">
+                <div class="col-header">
+                  <div class="col-title-wrap">
+                    <span class="col-name">In Progress</span>
+                    <span class="col-count">1 cards</span>
+                  </div>
+                  <span class="col-dots">•••</span>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-tags">
+                    <span class="tag tag-medium">Medium</span>
+                    <span class="tag tag-gray">UI design</span>
+                  </div>
+                  <h4 class="card-title">Build column reorder functionality</h4>
+                  <div class="card-footer">
+                    <div class="avatar-stack">
+                      <div class="mini-avatar av2">👩🏼</div>
+                      <div class="mini-avatar av1">👨🏻‍🦰</div>
+                    </div>
+                    <div class="card-meta"><span>🚩 July 14</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="kanban-col-preview">
+                <div class="col-header">
+                  <div class="col-title-wrap">
+                    <span class="col-name">In Review</span>
+                    <span class="col-count">2 cards</span>
+                  </div>
+                  <span class="col-dots">•••</span>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-tags">
+                    <span class="tag tag-low">Low</span>
+                    <span class="tag tag-gray">Design System</span>
+                  </div>
+                  <h4 class="card-title">Refactor task card component for modularity</h4>
+                  <div class="card-footer">
+                    <div class="avatar-stack">
+                      <div class="mini-avatar av3">👩🏻</div>
+                    </div>
+                    <div class="card-meta"><span>🚩 July 2</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="kanban-col-preview">
+                <div class="col-header">
+                  <div class="col-title-wrap">
+                    <span class="col-name">Done</span>
+                    <span class="col-count">1 cards</span>
+                  </div>
+                  <span class="col-dots">•••</span>
+                </div>
+                <div class="kanban-card">
+                  <div class="card-tags">
+                    <span class="tag tag-high">High</span>
+                    <span class="tag tag-gray">Research</span>
+                  </div>
+                  <h4 class="card-title">Create initial column layout</h4>
+                  <div class="card-footer">
+                    <div class="avatar-stack">
+                      <div class="mini-avatar av1">🧑🏻‍💻</div>
+                    </div>
+                    <div class="card-meta"><span>🚩 July 2</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BIG TESTIMONIAL SPOTLIGHT -->
+    <section class="spotlight-section">
+      <div class="spotlight-ambient-bg">
+        <img src="images/JiJAKyyQiokKKwm9o6YHgRoDe9A.png" alt="" class="spotlight-bg-img">
+      </div>
+      <div class="container text-center spotlight-container">
+        <!-- 5 Blue Stars -->
+        <div class="spotlight-stars">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#47AAFD">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#47AAFD">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#47AAFD">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#47AAFD">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#47AAFD">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+        </div>
+
+        <!-- Spotlight Quote -->
+        <blockquote class="spotlight-quote">
+          “NGD transformed how our team collaborates. Tasks are crystal clear, deadlines are never missed, and
+          productivity has skyrocketed.”
+        </blockquote>
+
+        <!-- Author with authentic avatar -->
+        <div class="spotlight-author">
+          <div class="spotlight-avatar-wrap">
+            <img src="images/6kO1dlRzsKwsWaTOcLkg6PMHUes.png" alt="Josh Klein" class="spotlight-avatar-img">
+          </div>
+          <div class="spotlight-author-info">
+            <div class="spotlight-author-name">Josh Klein</div>
+            <div class="spotlight-author-role">Marketing Director</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="faq-grid">
+          <!-- Left Column -->
+          <div class="faq-left">
+            <div class="pill-badge faq-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+              <span>FAQs</span>
+            </div>
+            <h2 class="faq-headline">
+              Got <span class="serif-italic">Questions?</span>
+            </h2>
+            <p class="faq-desc">
+              Everything you need to know before getting started.
+            </p>
+          </div>
+
+          <!-- Right Column: Accordion List -->
+          <div class="faq-right">
+            <div class="accordion-list">
+              <!-- Item 1 (Open by default) -->
+              <div class="accordion-item active">
+                <button class="accordion-header" type="button" aria-expanded="true">
+                  <span class="accordion-title">What makes NGD different from other tools?</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-divider"></div>
+                  <p class="accordion-text">
+                    NGD combines clarity and speed in one simple platform — with customizable boards, built-in
+                    collaboration, and real-time tracking designed to help teams focus on getting work done, not
+                    managing tools.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="accordion-item">
+                <button class="accordion-header" type="button" aria-expanded="false">
+                  <span class="accordion-title">Can I integrate NGD with my existing tools?</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-divider"></div>
+                  <p class="accordion-text">
+                    Yes! NGD connects effortlessly with over 200+ popular applications including Slack, Google Drive,
+                    Figma, GitHub, Notion, and Zapier for custom workflow automation.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="accordion-item">
+                <button class="accordion-header" type="button" aria-expanded="false">
+                  <span class="accordion-title">Is NGD suitable for small teams or startups?</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-divider"></div>
+                  <p class="accordion-text">
+                    Absolutely. NGD was built with fast-moving teams and startups in mind. You can start completely
+                    free on our Starter plan and upgrade to Pro only when you need deeper integrations or advanced team
+                    management.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="accordion-item">
+                <button class="accordion-header" type="button" aria-expanded="false">
+                  <span class="accordion-title">Do I need a credit card to get started?</span>
+                  <span class="accordion-icon" aria-hidden="true"></span>
+                </button>
+                <div class="accordion-body">
+                  <div class="accordion-divider"></div>
+                  <p class="accordion-text">
+                    No credit card is required. You can try our Pro plan free for 14 days or use the free Starter tier
+                    with no time limit.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 5: Dashed Contact Card -->
+              <div class="faq-contact-card">
+                <div class="fcc-left">
+                  <div class="fcc-title">Do I need a credit card to get started?</div>
+                  <div class="fcc-sub">Please chat to our friendly team!</div>
+                </div>
+                <button class="faq-contact-btn waitlist-trigger" type="button">Contact Us</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="final-cta-section">
+      <div class="container">
+        <div class="dark-card final-cta-card text-center">
+          <h2 class="cta-title">
+            Ready to Make Work <span class="serif-italic serif-gradient">Effortless?</span>
+          </h2>
+          <p class="cta-subtitle">Start today - no credit card required.</p>
+          <div class="cta-btn-wrap">
+            <button class="btn btn-white btn-lg waitlist-trigger" type="button">Get Started Free</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Newsletter column -->
+        <div class="footer-newsletter">
+          <h3 class="footer-nl-title">Subscribe to our Newsletter</h3>
+          <p class="footer-nl-desc">Get productivity tips &amp; insights straight to your inbox.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" class="nl-input" id="nlEmail" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-white btn-nl">Subscribe</button>
+          </form>
+          <div class="newsletter-success" id="nlSuccess">Thank you for subscribing! ✨</div>
+        </div>
+
+        <!-- Center brand info -->
+        <div class="footer-brand text-center">
+          <div class="brand-logo footer-logo justify-center">
+            <div class="brand-icon">
+              <img src="images/newnex.png" alt="NGD" width="28" height="28" style="border-radius: 8px; display: block; object-fit: cover;">
+            </div>
+            <span class="brand-name">NGD</span>
+          </div>
+          <p class="footer-copy">© 2025 NexGenDev (NGD). All rights reserved.</p>
+        </div>
+
+        <!-- Right links & socials -->
+        <div class="footer-right">
+          <!-- Social icons -->
+          <div class="social-links">
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon" aria-label="X / Twitter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Nav Links -->
+          <div class="footer-nav-row">
+            <a href="#features" class="footer-link">Product</a>
+            <a href="#about" class="footer-link">Company</a>
+            <a href="#faq" class="footer-link">Blog</a>
+            <a href="#faq" class="footer-link">FAQs</a>
+          </div>
+
+          <div class="footer-legal-row">
+            <a href="#" class="legal-link">PRIVACY POLICY</a>
+            <a href="#" class="legal-link">TERMS &amp; CONDITION</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WAITLIST MODAL DIALOG -->
+  <div class="modal-overlay" id="waitlistModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">✕</button>
+      <div class="modal-header text-center">
+        <div class="brand-icon modal-logo mx-auto">
+          <img src="images/newnex.png" alt="NGD" width="32" height="32" style="border-radius: 8px; display: block; object-fit: cover;">
+        </div>
+        <h3 class="modal-title">Join the NGD Waitlist</h3>
+        <p class="modal-desc">Be among the first to experience the fastest, cleanest way to manage your team’s projects.
+        </p>
+      </div>
+
+      <form class="modal-form" id="waitlistForm">
+        <div class="form-group">
+          <label for="wlName" class="form-label">Full Name</label>
+          <input type="text" id="wlName" class="form-input" placeholder="Alex Morgan" required>
+        </div>
+        <div class="form-group">
+          <label for="wlEmail" class="form-label">Work Email</label>
+          <input type="email" id="wlEmail" class="form-input" placeholder="alex@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="wlSize" class="form-label">Team Size</label>
+          <select id="wlSize" class="form-input">
+            <option value="1-5">1 - 5 members</option>
+            <option value="6-20" selected>6 - 20 members</option>
+            <option value="21-50">21 - 50 members</option>
+            <option value="50+">50+ members</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-dark w-full btn-lg mt-2">Request Early Access</button>
+      </form>
+
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon">🎉</div>
+        <h4>You're on the list!</h4>
+        <p>We've reserved your spot. Watch your inbox for your VIP invitation code.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
