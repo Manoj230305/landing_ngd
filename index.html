@@ -42,7 +42,7 @@
         <a href="#features" class="nav-link active">Features</a>
         <a href="#integrations" class="nav-link">Integrations</a>
         <a href="#pricing" class="nav-link">Pricing</a>
-        <a href="#about" class="nav-link">Contact</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <div class="nav-dropdown">
           <a href="#faq" class="nav-link dropdown-toggle">
             Resources
@@ -70,17 +70,60 @@
       </div>
     </div>
 
-    <!-- Mobile Drawer Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-menu-inner">
-        <a href="#features" class="mobile-link">Features</a>
-        <a href="#integrations" class="mobile-link">Integrations</a>
-        <a href="#pricing" class="mobile-link">Pricing</a>
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#faq" class="mobile-link">FAQs</a>
+    <!-- Mobile Drawer Menu Backdrop -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+    <!-- Mobile Drawer Menu Card -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-card">
+        <!-- Card Header: Existing Logo + Close Button -->
+        <div class="mobile-menu-header">
+          <a href="#" class="mobile-card-brand" aria-label="NGD Home">
+            <img src="images/newnex.png" alt="NGD" class="mobile-brand-icon">
+            <span class="mobile-brand-text">NGD</span>
+          </a>
+          <button class="mobile-menu-close" id="mobileMenuCloseBtn" aria-label="Close navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Card Nav Links -->
+        <nav class="mobile-nav-list">
+          <div class="mobile-nav-item">
+            <a href="#features" class="mobile-link active">Features</a>
+            <div class="mobile-active-indicator"></div>
+          </div>
+          <div class="mobile-nav-item">
+            <a href="#integrations" class="mobile-link">Integrations</a>
+          </div>
+          <div class="mobile-nav-item">
+            <a href="#pricing" class="mobile-link">Pricing</a>
+          </div>
+          <div class="mobile-nav-item">
+            <a href="contact.html" class="mobile-link">Contact</a>
+          </div>
+          <div class="mobile-nav-item mobile-dropdown-item">
+            <button type="button" class="mobile-link mobile-dropdown-btn" id="mobileResourcesBtn" aria-expanded="false">
+              <span>Resources</span>
+              <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-submenu" id="mobileResourcesSubmenu">
+              <a href="#about" class="mobile-sublink">About Us</a>
+              <a href="#comparison" class="mobile-sublink">Comparison</a>
+              <a href="#faq" class="mobile-sublink">FAQs</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Bottom Actions (Side by Side) -->
         <div class="mobile-actions">
-          <button class="btn btn-outline waitlist-trigger w-full" type="button">Join Waitlist</button>
-          <a href="#pricing" class="btn btn-dark w-full">Buy this Template</a>
+          <button class="btn mobile-btn-outline waitlist-trigger" type="button">Join Waitlist</button>
+          <a href="#pricing" class="btn mobile-btn-dark">Buy this Template</a>
         </div>
       </div>
     </div>
@@ -1803,7 +1846,7 @@
           <div class="footer-nav-row">
             <a href="#features" class="footer-link">Product</a>
             <a href="#about" class="footer-link">Company</a>
-            <a href="#faq" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
             <a href="#faq" class="footer-link">FAQs</a>
           </div>
 

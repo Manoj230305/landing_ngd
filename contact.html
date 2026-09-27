@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - NGD Premium SaaS &amp; Startup Template</title>
+  <meta name="description"
+    content="Have questions, feedback, or a partnership idea? Reach out to the NGD team and we'll get back to you within 24 hours.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/newnex.png">
+  <link rel="apple-touch-icon" href="images/newnex.png">
+
+  <!-- Google Fonts: Inter & Source Serif 4 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Serif+4:ital,opsz,wght@1,8..60,400..700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Ambient Background Accents -->
+  <div class="ambient-glow glow-top"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="NGD Home">
+        <div class="brand-icon">
+          <img src="images/newnex.png" alt="NGD" width="28" height="28"
+            style="border-radius: 8px; display: block; object-fit: cover;">
+        </div>
+        <span class="brand-name">NGD</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-links">
+        <a href="index.html#features" class="nav-link">Features</a>
+        <a href="index.html#integrations" class="nav-link">Integrations</a>
+        <a href="index.html#pricing" class="nav-link">Pricing</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+        <div class="nav-dropdown">
+          <a href="index.html#faq" class="nav-link dropdown-toggle">
+            Resources
+            <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </a>
+          <div class="dropdown-menu">
+            <a href="index.html#about" class="dropdown-item">About Us</a>
+            <a href="index.html#comparison" class="dropdown-item">Comparison</a>
+            <a href="index.html#faq" class="dropdown-item">FAQs</a>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="header-actions">
+        <button class="btn btn-outline waitlist-trigger" type="button">Join Waitlist</button>
+        <a href="index.html#pricing" class="btn btn-dark">Buy this Template</a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu Backdrop -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+    <!-- Mobile Drawer Menu Card -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-card">
+        <!-- Card Header: Existing Logo + Close Button -->
+        <div class="mobile-menu-header">
+          <a href="index.html" class="mobile-card-brand" aria-label="NGD Home">
+            <img src="images/newnex.png" alt="NGD" class="mobile-brand-icon">
+            <span class="mobile-brand-text">NGD</span>
+          </a>
+          <button class="mobile-menu-close" id="mobileMenuCloseBtn" aria-label="Close navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Card Nav Links -->
+        <nav class="mobile-nav-list">
+          <div class="mobile-nav-item">
+            <a href="index.html#features" class="mobile-link">Features</a>
+          </div>
+          <div class="mobile-nav-item">
+            <a href="index.html#integrations" class="mobile-link">Integrations</a>
+          </div>
+          <div class="mobile-nav-item">
+            <a href="index.html#pricing" class="mobile-link">Pricing</a>
+          </div>
+          <div class="mobile-nav-item">
+            <a href="contact.html" class="mobile-link active">Contact</a>
+            <div class="mobile-active-indicator"></div>
+          </div>
+          <div class="mobile-nav-item mobile-dropdown-item">
+            <button type="button" class="mobile-link mobile-dropdown-btn" id="mobileResourcesBtn" aria-expanded="false">
+              <span>Resources</span>
+              <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-submenu" id="mobileResourcesSubmenu">
+              <a href="index.html#about" class="mobile-sublink">About Us</a>
+              <a href="index.html#comparison" class="mobile-sublink">Comparison</a>
+              <a href="index.html#faq" class="mobile-sublink">FAQs</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Bottom Actions (Side by Side) -->
+        <div class="mobile-actions">
+          <button class="btn mobile-btn-outline waitlist-trigger" type="button">Join Waitlist</button>
+          <a href="index.html#pricing" class="btn mobile-btn-dark">Buy this Template</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Left Column -->
+          <div class="contact-left">
+            <div class="pill-badge contact-badge">Contact Us</div>
+
+            <h1 class="contact-hero-title">
+              We'd Love to
+              <span class="serif-italic">Hear from You</span>
+            </h1>
+
+            <p class="contact-lead">
+              Whether you have a question, feedback, or partnership idea &mdash; our team is here.
+            </p>
+
+            <div class="contact-info-list">
+              <!-- Email Card -->
+              <a href="mailto:inf0@nexgendev.in" class="contact-info-card" aria-label="Send email to inf0@nexgendev.in">
+                <div class="contact-info-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="3"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <span class="contact-info-text">info@nexgendev.in</span>
+              </a>
+
+              <!-- Phone Card -->
+              <a href="tel:+91 9080795657" class="contact-info-card" aria-label="Call +91 9080795657">
+                <div class="contact-info-icon">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+                <span class="contact-info-text">+91 9080795657</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column (Form Card) -->
+          <div class="contact-right">
+            <div class="contact-form-card">
+              <h2 class="contact-form-title">Send Us a Message</h2>
+              <p class="contact-form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+              <form id="contactForm" novalidate>
+                <!-- Name and Email Row -->
+                <div class="contact-form-row">
+                  <div class="contact-form-group">
+                    <label for="contactName" class="contact-form-label">Name</label>
+                    <input type="text" id="contactName" name="name" class="contact-form-input"
+                      placeholder="Enter your name" required>
+                  </div>
+                  <div class="contact-form-group">
+                    <label for="contactEmail" class="contact-form-label">Email</label>
+                    <input type="email" id="contactEmail" name="email" class="contact-form-input"
+                      placeholder="name@company.com" required>
+                  </div>
+                </div>
+
+                <!-- Subject Field -->
+                <div class="contact-form-group">
+                  <label for="contactSubject" class="contact-form-label">Subject</label>
+                  <input type="text" id="contactSubject" name="subject" class="contact-form-input"
+                    placeholder="Write a subject" required>
+                </div>
+
+                <!-- Message Field -->
+                <div class="contact-form-group">
+                  <label for="contactMessage" class="contact-form-label">Message</label>
+                  <textarea id="contactMessage" name="message" class="contact-form-textarea"
+                    placeholder="Write your message here..." rows="4" required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-contact-submit" id="contactSubmitBtn">
+                  <span>Send Message</span>
+                </button>
+              </form>
+
+              <!-- Success State -->
+              <div class="contact-success-state" id="contactSuccess" style="display: none;">
+                <div class="contact-success-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <h3 class="contact-success-title">Message Sent!</h3>
+                <p class="contact-success-desc">Thank you for getting in touch. Our team has received your message and
+                  will respond within 24 hours.</p>
+                <button type="button" class="btn btn-outline" id="contactResetBtn">Send Another Message</button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Newsletter column -->
+        <div class="footer-newsletter">
+          <h3 class="footer-nl-title">Subscribe to our Newsletter</h3>
+          <p class="footer-nl-desc">Get productivity tips &amp; insights straight to your inbox.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" class="nl-input" id="nlEmail" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-white btn-nl">Subscribe</button>
+          </form>
+          <div class="newsletter-success" id="nlSuccess">Thank you for subscribing! ✨</div>
+        </div>
+
+        <!-- Center brand info -->
+        <div class="footer-brand text-center">
+          <div class="brand-logo footer-logo justify-center">
+            <div class="brand-icon">
+              <img src="images/newnex.png" alt="NGD" width="28" height="28"
+                style="border-radius: 8px; display: block; object-fit: cover;">
+            </div>
+            <span class="brand-name">NGD</span>
+          </div>
+          <p class="footer-copy">© 2025 NexGenDev (NGD). All rights reserved.</p>
+        </div>
+
+        <!-- Right links & socials -->
+        <div class="footer-right">
+          <!-- Social icons -->
+          <div class="social-links">
+            <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon" aria-label="X / Twitter">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- Nav Links -->
+          <div class="footer-nav-row">
+            <a href="index.html#features" class="footer-link">Product</a>
+            <a href="index.html#about" class="footer-link">Company</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="index.html#faq" class="footer-link">FAQs</a>
+          </div>
+
+          <div class="footer-legal-row">
+            <a href="#" class="legal-link">PRIVACY POLICY</a>
+            <a href="#" class="legal-link">TERMS &amp; CONDITION</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WAITLIST MODAL DIALOG -->
+  <div class="modal-overlay" id="waitlistModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">✕</button>
+      <div class="modal-header text-center">
+        <div class="brand-icon modal-logo mx-auto">
+          <img src="images/newnex.png" alt="NGD" width="32" height="32"
+            style="border-radius: 8px; display: block; object-fit: cover;">
+        </div>
+        <h3 class="modal-title">Join the NGD Waitlist</h3>
+        <p class="modal-desc">Be among the first to experience the fastest, cleanest way to manage your team’s projects.
+        </p>
+      </div>
+
+      <form class="modal-form" id="waitlistForm">
+        <div class="form-group">
+          <label for="wlName" class="form-label">Full Name</label>
+          <input type="text" id="wlName" class="form-input" placeholder="Alex Morgan" required>
+        </div>
+        <div class="form-group">
+          <label for="wlEmail" class="form-label">Work Email</label>
+          <input type="email" id="wlEmail" class="form-input" placeholder="alex@company.com" required>
+        </div>
+        <div class="form-group">
+          <label for="wlSize" class="form-label">Team Size</label>
+          <select id="wlSize" class="form-input">
+            <option value="1-5">1 - 5 members</option>
+            <option value="6-20" selected>6 - 20 members</option>
+            <option value="21-50">21 - 50 members</option>
+            <option value="50+">50+ members</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-dark w-full btn-lg mt-2">Request Early Access</button>
+      </form>
+
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon">🎉</div>
+        <h4>You're on the list!</h4>
+        <p>We've reserved your spot. Watch your inbox for your VIP invitation code.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

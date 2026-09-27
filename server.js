@@ -14,7 +14,13 @@ const MIME = {
 };
 
 const server = http.createServer((req, res) => {
-  let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : req.url);
+  let cleanUrl = req.url.split('?')[0];
+  let filePath = path.join(__dirname, cleanUrl === '/' ? 'index.html' : cleanUrl);
+  if (!path.extname(filePath)) {
+    if (fs.existsSync(filePath + '.html')) {
+      filePath += '.html';
+    }
+  }
   const ext = path.extname(filePath);
   const contentType = MIME[ext] || 'text/plain';
 
