@@ -1334,28 +1334,39 @@ body {
 
 .feature-pills-mask-wrapper {
   width: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 5%, rgba(0, 0, 0, 1) 16%, rgba(0, 0, 0, 1) 84%, rgba(0, 0, 0, 0.4) 95%, rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 5%, rgba(0, 0, 0, 1) 16%, rgba(0, 0, 0, 1) 84%, rgba(0, 0, 0, 0.4) 95%, rgba(0, 0, 0, 0) 100%);
-  padding: 10px 0 24px;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  padding: 16px 0 28px;
   margin-bottom: 50px;
-}
-
-.feature-pills-mask-wrapper::-webkit-scrollbar {
-  display: none;
 }
 
 .feature-pills-track {
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 20px;
   width: max-content;
-  margin: 0 auto;
-  padding: 0 40px;
+  user-select: none;
+}
+
+.feature-pills-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+  animation: smarterMarquee 26s linear infinite;
+}
+
+.feature-pills-mask-wrapper:hover .feature-pills-group {
+  animation-play-state: paused;
+}
+
+@keyframes smarterMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 20px));
+  }
 }
 
 .smarter-card {
@@ -1364,7 +1375,7 @@ body {
   height: 172px;
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
+  border-radius: 22px;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
