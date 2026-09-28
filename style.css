@@ -1580,86 +1580,488 @@ body {
 }
 
 .integrations-card {
-  background: radial-gradient(circle at 50% 0%, #1f2a28 0%, #141414 70%);
-}
-
-.integration-tree-wrapper {
-  margin-top: 60px;
+  background: radial-gradient(circle at 50% 50%, #15181e 0%, #0d0f13 65%, #08090b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  overflow: hidden;
+  padding: 80px 32px 70px;
 }
 
-.integration-hub {
-  width: 90px;
-  height: 90px;
-  background: var(--grad-brand);
-  border-radius: 28px;
+.integrations-ambient-glow {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  width: 500px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(14, 165, 233, 0.04) 50%, transparent 75%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.serif-italic-tools {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  padding-left: 2px;
+}
+
+.integrations-headline {
+  font-size: clamp(38px, 4.8vw, 58px);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.integrations-subtext {
+  font-size: clamp(15px, 1.6vw, 17px);
+  color: #94a3b8;
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Interactive Network Diagram Stage
+   ========================================================================== */
+.integrations-network-stage {
+  position: relative;
+  width: 100%;
+  max-width: 980px;
+  margin: 50px auto 10px;
+  aspect-ratio: 1000 / 560;
+  min-height: 460px;
+  z-index: 1;
+  user-select: none;
+}
+
+/* SVG Canvas overlay */
+.net-svg-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Base circuit lines */
+.net-wire-base {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.35s ease;
+}
+
+/* Active illuminated wires */
+.net-wire-active {
+  fill: none;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), stroke-width 0.35s ease, filter 0.35s ease;
+}
+
+.wire-slack-act { stroke: #36C5F0; filter: drop-shadow(0 0 8px rgba(54, 197, 240, 0.75)); }
+.wire-jira-act { stroke: #2684FF; filter: drop-shadow(0 0 8px rgba(38, 132, 255, 0.8)); }
+.wire-zapier-act { stroke: #FF4F00; filter: drop-shadow(0 0 8px rgba(255, 79, 0, 0.8)); }
+.wire-sheets-act { stroke: #0F9D58; filter: drop-shadow(0 0 8px rgba(15, 157, 88, 0.8)); }
+.wire-mailchimp-act { stroke: #FFE01B; filter: drop-shadow(0 0 8px rgba(255, 224, 27, 0.8)); }
+.wire-dropbox-act { stroke: #0061FF; filter: drop-shadow(0 0 8px rgba(0, 97, 255, 0.8)); }
+.wire-figma-act { stroke: #A259FF; filter: drop-shadow(0 0 8px rgba(162, 89, 255, 0.8)); }
+.wire-g2-act { stroke: #00B67A; filter: drop-shadow(0 0 8px rgba(0, 182, 122, 0.8)); }
+
+.net-wire-active.is-active,
+.stage-all-active .net-wire-active {
+  opacity: 1;
+}
+
+/* Continuous Pulse Beams - Outward Flow from NexGen Hub to all logos */
+.net-wire-pulse {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  stroke-dasharray: 65 480;
+  animation: pulseTravelOutward 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.pulse-slack { stroke: url(#pulse-grad-slack); }
+.pulse-jira { stroke: url(#pulse-grad-jira); }
+.pulse-zapier { stroke: url(#pulse-grad-zapier); }
+.pulse-sheets { stroke: url(#pulse-grad-sheets); }
+.pulse-mailchimp { stroke: url(#pulse-grad-mailchimp); }
+.pulse-dropbox { stroke: url(#pulse-grad-dropbox); }
+.pulse-figma { stroke: url(#pulse-grad-figma); }
+.pulse-g2 { stroke: url(#pulse-grad-g2); }
+
+.net-wire-pulse.boost-speed,
+.stage-all-active .net-wire-pulse {
+  animation-duration: 1.4s !important;
+  stroke-width: 3.6;
+}
+
+/* ==========================================================================
+   Center Hub Node (NexGen Dev - Sleek Dark Shield Squircle)
+   ========================================================================== */
+.net-hub-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 50px rgba(115, 255, 234, 0.35);
-  margin-bottom: 50px;
-  z-index: 2;
-  transition: transform var(--trans-fast);
+  cursor: pointer;
+  outline: none;
 }
 
-.integration-hub:hover {
+.hub-squircle {
+  width: 82px;
+  height: 82px;
+  border-radius: 22px;
+  background: transparent;
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.75),
+    0 0 35px rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  position: relative;
+  z-index: 2;
+  animation: hubCyclePulse 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.hub-nexgen-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hub-pulse-aura {
+  position: absolute;
+  inset: -12px;
+  border-radius: 32px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  pointer-events: none;
+  animation: hubAuraRipple 3s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  z-index: 1;
+}
+
+.aura-2 {
+  animation-delay: 1.5s;
+}
+
+.net-hub-container:hover .hub-squircle,
+.net-hub-container:focus-visible .hub-squircle {
+  transform: scale(1.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 16px 45px rgba(0, 0, 0, 0.8),
+    0 0 50px rgba(255, 255, 255, 0.2),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.net-hub-container:hover .hub-nexgen-logo {
   transform: scale(1.05);
 }
 
-.apps-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  max-width: 800px;
-}
-
-.app-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-dark);
-  border-radius: 18px;
-  padding: 16px 22px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  transition: all var(--trans-fast);
+/* ==========================================================================
+   Outer App Nodes
+   ========================================================================== */
+.net-app-node {
+  position: absolute;
+  z-index: 3;
+  transform: translate(-50%, -50%);
   cursor: pointer;
+  outline: none;
 }
 
-.app-card:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--border-dark-highlight);
-  transform: translateY(-3px);
-}
+/* Pinpoint positions matching the geometry */
+.app-slack { left: 18.5%; top: 21.4%; --card-glow-color: rgba(54, 197, 240, 0.5); }
+.app-jira { left: 12.5%; top: 40.2%; --card-glow-color: rgba(38, 132, 255, 0.55); }
+.app-zapier { left: 12.0%; top: 61.6%; --card-glow-color: rgba(255, 74, 0, 0.55); }
+.app-sheets { left: 18.0%; top: 80.4%; --card-glow-color: rgba(33, 206, 53, 0.55); }
 
-.app-icon-wrap {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+.app-mailchimp { left: 81.5%; top: 21.4%; --card-glow-color: rgba(253, 221, 76, 0.5); }
+.app-dropbox { left: 87.5%; top: 40.2%; --card-glow-color: rgba(15, 40, 127, 0.65); }
+.app-figma { left: 88.0%; top: 61.6%; --card-glow-color: rgba(162, 89, 255, 0.55); }
+.app-g2 { left: 82.0%; top: 80.4%; --card-glow-color: rgba(12, 92, 83, 0.65); }
+
+.app-card-inner {
+  width: 78px;
+  height: 78px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
 }
 
-.bg-slack { background: rgba(255, 255, 255, 0.08); }
-.bg-mailchimp { background: #FFE01B; }
-.bg-zapier { background: #FF4A00; }
-.bg-sheets { background: #0F9D58; }
-.bg-figma { background: rgba(255, 255, 255, 0.08); }
-.bg-github { background: #24292E; }
-
-.zapier-asterisk {
-  font-size: 28px;
-  color: #fff;
-  line-height: 1;
+.app-brand-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease, box-shadow 0.35s ease;
 }
 
-.app-name {
-  font-size: 15px;
+.net-app-node:hover .app-brand-svg,
+.net-app-node.is-hovered .app-brand-svg {
+  transform: scale(1.1) translateY(-4px);
+  filter: drop-shadow(0 12px 28px var(--card-glow-color, rgba(255, 255, 255, 0.3)));
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+}
+
+/* ==========================================================================
+   Tooltips
+   ========================================================================== */
+.node-tooltip {
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  font-size: 12px;
   font-weight: 600;
+  color: #f8fafc;
+  background: rgba(15, 17, 23, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.node-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 4px;
+  border-style: solid;
+  border-color: rgba(15, 17, 23, 0.9) transparent transparent transparent;
+}
+
+.net-app-node:hover .node-tooltip,
+.net-app-node:focus-visible .node-tooltip,
+.net-hub-container:hover .node-tooltip,
+.net-hub-container:focus-visible .node-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ==========================================================================
+   Animation Keyframes
+   ========================================================================== */
+@keyframes pulseTravelOutward {
+  0% {
+    stroke-dashoffset: 70;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  62% {
+    stroke-dashoffset: -360;
+    opacity: 1;
+  }
+  72% {
+    stroke-dashoffset: -440;
+    opacity: 0;
+  }
+  100% {
+    stroke-dashoffset: -440;
+    opacity: 0;
+  }
+}
+
+@keyframes hubCyclePulse {
+  0% {
+    transform: scale(1.04);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow:
+      0 0 50px rgba(255, 255, 255, 0.3),
+      0 12px 35px rgba(0, 0, 0, 0.7);
+  }
+  25% {
+    transform: scale(1);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow:
+      0 0 35px rgba(255, 255, 255, 0.06),
+      0 12px 35px rgba(0, 0, 0, 0.7);
+  }
+  100% {
+    transform: scale(1);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow:
+      0 0 35px rgba(255, 255, 255, 0.06),
+      0 12px 35px rgba(0, 0, 0, 0.7);
+  }
+}
+
+@keyframes hubAuraRipple {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.85;
+  }
+  40% {
+    opacity: 0.3;
+  }
+  80%, 100% {
+    transform: scale(1.42);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   Network Diagram Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 900px) {
+  .integrations-network-stage {
+    aspect-ratio: 1000 / 580;
+    min-height: 400px;
+  }
+
+  .app-card-inner {
+    width: 64px;
+    height: 64px;
+  }
+
+  .hub-squircle {
+    width: 68px;
+    height: 68px;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .integrations-card {
+    padding: 44px 14px 32px;
+    border-radius: 24px;
+  }
+
+  .integrations-network-stage {
+    aspect-ratio: 1000 / 640;
+    min-height: 330px;
+    margin: 28px auto 0;
+  }
+
+  /* Reposition nodes on mobile to give generous breathing room */
+  .app-slack { left: 14%; top: 16%; }
+  .app-jira { left: 7.5%; top: 38%; }
+  .app-zapier { left: 7.5%; top: 62%; }
+  .app-sheets { left: 14%; top: 84%; }
+
+  .app-mailchimp { left: 86%; top: 16%; }
+  .app-dropbox { left: 92.5%; top: 38%; }
+  .app-figma { left: 92.5%; top: 62%; }
+  .app-g2 { left: 86%; top: 84%; }
+
+  .app-card-inner {
+    width: 44px;
+    height: 44px;
+  }
+
+  .app-brand-svg {
+    border-radius: 12px;
+  }
+
+  .hub-squircle {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+  }
+
+  .hub-nexgen-logo {
+    border-radius: 13px;
+  }
+
+  .hub-pulse-aura {
+    inset: -8px;
+    border-radius: 20px;
+  }
+
+  .net-wire-base {
+    stroke-width: 1.4;
+  }
+
+  .net-wire-active {
+    stroke-width: 2.0;
+  }
+
+  .net-wire-pulse {
+    stroke-width: 2.2;
+  }
+
+  .node-tooltip {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .integrations-network-stage {
+    aspect-ratio: 1000 / 680;
+    min-height: 300px;
+    margin: 22px auto 0;
+  }
+
+  .app-slack { left: 13%; top: 15%; }
+  .app-jira { left: 6%; top: 38%; }
+  .app-zapier { left: 6%; top: 62%; }
+  .app-sheets { left: 13%; top: 85%; }
+
+  .app-mailchimp { left: 87%; top: 15%; }
+  .app-dropbox { left: 94%; top: 38%; }
+  .app-figma { left: 94%; top: 62%; }
+  .app-g2 { left: 87%; top: 85%; }
+
+  .app-card-inner {
+    width: 38px;
+    height: 38px;
+  }
+
+  .app-brand-svg {
+    border-radius: 10px;
+  }
+
+  .hub-squircle {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  .hub-nexgen-logo {
+    border-radius: 11px;
+  }
+
+  .hub-pulse-aura {
+    inset: -6px;
+    border-radius: 16px;
+  }
 }
 
 /* ==========================================================================
