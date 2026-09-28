@@ -43,7 +43,7 @@
         <a href="#features" class="nav-link active">Features</a>
         <a href="#integrations" class="nav-link">Integrations</a>
         <a href="#pricing" class="nav-link">Pricing</a>
-        <a href="#about" class="nav-link">Contact</a>
+        <a href="contact.html" class="nav-link">Contact</a>
         <div class="nav-dropdown">
           <a href="#faq" class="nav-link dropdown-toggle">
             Resources
@@ -71,17 +71,62 @@
       </div>
     </div>
 
-    <!-- Mobile Drawer Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <div class="mobile-menu-inner">
-        <a href="#features" class="mobile-link">Features</a>
-        <a href="#integrations" class="mobile-link">Integrations</a>
-        <a href="#pricing" class="mobile-link">Pricing</a>
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#faq" class="mobile-link">FAQs</a>
+    <!-- Mobile Drawer Menu Backdrop -->
+    <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+
+    <!-- Mobile Drawer Menu Card -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-card">
+        <!-- Card Header: Existing Logo + Close Button -->
+        <div class="mobile-menu-header">
+          <a href="#" class="mobile-card-brand" aria-label="NGD Home">
+            <img src="images/newnex.png" alt="NGD" class="mobile-brand-icon">
+            <span class="mobile-brand-text">NGD</span>
+          </a>
+          <button class="mobile-menu-close" id="mobileMenuCloseBtn" aria-label="Close navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Card Nav Links -->
+        <nav class="mobile-nav-list">
+          <div class="mobile-nav-item">
+            <a href="#features" class="mobile-link active">Features</a>
+            <div class="mobile-active-indicator"></div>
+          </div>
+          <div class="mobile-nav-item">
+            <a href="#integrations" class="mobile-link">Integrations</a>
+          </div>
+          <div class="mobile-nav-item">
+            <a href="#pricing" class="mobile-link">Pricing</a>
+          </div>
+          <div class="mobile-nav-item">
+            <a href="contact.html" class="mobile-link">Contact</a>
+          </div>
+          <div class="mobile-nav-item mobile-dropdown-item">
+            <button type="button" class="mobile-link mobile-dropdown-btn" id="mobileResourcesBtn" aria-expanded="false">
+              <span>Resources</span>
+              <svg class="mobile-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="mobile-submenu" id="mobileResourcesSubmenu">
+              <a href="#about" class="mobile-sublink">About Us</a>
+              <a href="#comparison" class="mobile-sublink">Comparison</a>
+              <a href="#faq" class="mobile-sublink">FAQs</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Bottom Actions (Side by Side) -->
         <div class="mobile-actions">
-          <button class="btn btn-outline waitlist-trigger w-full" type="button">Join Waitlist</button>
-          <a href="#pricing" class="btn btn-dark w-full">Buy this Template</a>
+          <button class="btn mobile-btn-outline waitlist-trigger" type="button">Join Waitlist</button>
+          <a href="#pricing" class="btn mobile-btn-dark">Buy this Template</a>
         </div>
       </div>
     </div>
@@ -379,49 +424,187 @@
           <h2 class="feature-pills-title">Work Smarter, <span class="serif-italic-accent">Not Harder</span></h2>
         </div>
 
-        <!-- 6 Feature Icon Cards with edge mask -->
+        <!-- 6 Feature Icon Cards with edge mask (Continuous Infinite Carousel) -->
         <div class="feature-pills-mask-wrapper">
           <div class="feature-pills-track">
-            <div class="smarter-card">
-              <div class="smarter-icon-wrap">
-                <img src="images/lT0fkuVbKbQcKHsmAWQe4HDsrA.svg" alt="Notifications" class="smarter-icon">
+            <!-- Group 1 -->
+            <div class="feature-pills-group">
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/lT0fkuVbKbQcKHsmAWQe4HDsrA.svg" alt="Notifications" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Notifications</span>
               </div>
-              <span class="smarter-name">Notifications</span>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/6tPTiCIHP8ZgCC2o3FwZ6fBtNPo.svg" alt="Live Progress" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Live Progress</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/vKhUCVmRyGb43eDyRiBWJiWB5Z4.svg" alt="Analytics" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Analytics</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/ir2HDQMmDIcZKFeUvwToIPLGYss.svg" alt="Fast Setup" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Fast Setup</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/4mFzA3Uvepl8pLAH7IEyxKSvU.svg" alt="Always Synced" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Always Synced</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/2fttIDWN9sJMyH48RK3IzkPA8z0.svg" alt="Timeline View" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Timeline View</span>
+              </div>
             </div>
 
-            <div class="smarter-card">
-              <div class="smarter-icon-wrap">
-                <img src="images/6tPTiCIHP8ZgCC2o3FwZ6fBtNPo.svg" alt="Live Progress" class="smarter-icon">
+            <!-- Group 2 (Clone for infinite seamless loop) -->
+            <div class="feature-pills-group" aria-hidden="true">
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/lT0fkuVbKbQcKHsmAWQe4HDsrA.svg" alt="Notifications" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Notifications</span>
               </div>
-              <span class="smarter-name">Live Progress</span>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/6tPTiCIHP8ZgCC2o3FwZ6fBtNPo.svg" alt="Live Progress" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Live Progress</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/vKhUCVmRyGb43eDyRiBWJiWB5Z4.svg" alt="Analytics" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Analytics</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/ir2HDQMmDIcZKFeUvwToIPLGYss.svg" alt="Fast Setup" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Fast Setup</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/4mFzA3Uvepl8pLAH7IEyxKSvU.svg" alt="Always Synced" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Always Synced</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/2fttIDWN9sJMyH48RK3IzkPA8z0.svg" alt="Timeline View" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Timeline View</span>
+              </div>
             </div>
 
-            <div class="smarter-card">
-              <div class="smarter-icon-wrap">
-                <img src="images/vKhUCVmRyGb43eDyRiBWJiWB5Z4.svg" alt="Analytics" class="smarter-icon">
+            <!-- Group 3 (Clone for seamless wide loop) -->
+            <div class="feature-pills-group" aria-hidden="true">
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/lT0fkuVbKbQcKHsmAWQe4HDsrA.svg" alt="Notifications" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Notifications</span>
               </div>
-              <span class="smarter-name">Analytics</span>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/6tPTiCIHP8ZgCC2o3FwZ6fBtNPo.svg" alt="Live Progress" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Live Progress</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/vKhUCVmRyGb43eDyRiBWJiWB5Z4.svg" alt="Analytics" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Analytics</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/ir2HDQMmDIcZKFeUvwToIPLGYss.svg" alt="Fast Setup" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Fast Setup</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/4mFzA3Uvepl8pLAH7IEyxKSvU.svg" alt="Always Synced" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Always Synced</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/2fttIDWN9sJMyH48RK3IzkPA8z0.svg" alt="Timeline View" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Timeline View</span>
+              </div>
             </div>
 
-            <div class="smarter-card">
-              <div class="smarter-icon-wrap">
-                <img src="images/ir2HDQMmDIcZKFeUvwToIPLGYss.svg" alt="Fast Setup" class="smarter-icon">
+            <!-- Group 4 (Clone for ultimate safety) -->
+            <div class="feature-pills-group" aria-hidden="true">
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/lT0fkuVbKbQcKHsmAWQe4HDsrA.svg" alt="Notifications" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Notifications</span>
               </div>
-              <span class="smarter-name">Fast Setup</span>
-            </div>
 
-            <div class="smarter-card">
-              <div class="smarter-icon-wrap">
-                <img src="images/4mFzA3Uvepl8pLAH7IEyxKSvU.svg" alt="Always Synced" class="smarter-icon">
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/6tPTiCIHP8ZgCC2o3FwZ6fBtNPo.svg" alt="Live Progress" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Live Progress</span>
               </div>
-              <span class="smarter-name">Always Synced</span>
-            </div>
 
-            <div class="smarter-card">
-              <div class="smarter-icon-wrap">
-                <img src="images/2fttIDWN9sJMyH48RK3IzkPA8z0.svg" alt="Timeline View" class="smarter-icon">
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/vKhUCVmRyGb43eDyRiBWJiWB5Z4.svg" alt="Analytics" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Analytics</span>
               </div>
-              <span class="smarter-name">Timeline View</span>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/ir2HDQMmDIcZKFeUvwToIPLGYss.svg" alt="Fast Setup" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Fast Setup</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/4mFzA3Uvepl8pLAH7IEyxKSvU.svg" alt="Always Synced" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Always Synced</span>
+              </div>
+
+              <div class="smarter-card">
+                <div class="smarter-icon-wrap">
+                  <img src="images/2fttIDWN9sJMyH48RK3IzkPA8z0.svg" alt="Timeline View" class="smarter-icon">
+                </div>
+                <span class="smarter-name">Timeline View</span>
+              </div>
             </div>
           </div>
         </div>
@@ -469,132 +652,252 @@
           </div>
         </div>
       </div>
-      <!-- INTEGRATIONS SECTION: ANIMATED HUB -->
-      <section class="integrations-section" id="integrations">
-        <div class="container integrations-inner-box">
-          <div class="integrations-header text-center">
-            <div class="pill-badge">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path
-                  d="M14 20.4v-5.8a.6.6 0 01.6-.6h5.8a.6.6 0 01.6.6v5.8a.6.6 0 01-.6.6h-5.8a.6.6 0 01-.6-.6zM3 20.4v-5.8a.6.6 0 01.6-.6h5.8a.6.6 0 01.6.6v5.8a.6.6 0 01-.6.6H3.6a.6.6 0 01-.6-.6zM14 9.4V3.6a.6.6 0 01.6-.6h5.8a.6.6 0 01.6.6v5.8a.6.6 0 01-.6.6h-5.8a.6.6 0 01-.6-.6zM3 9.4V3.6a.6.6 0 01.6-.6h5.8a.6.6 0 01.6.6v5.8a.6.6 0 01-.6.6H3.6a.6.6 0 01-.6-.6z">
-                </path>
+    </section>
+
+    <!-- DARK SECTION: WORKS WITH YOUR FAVORITE TOOLS -->
+    <section class="integrations-section" id="integrations">
+      <div class="container">
+        <div class="dark-card integrations-card">
+          <!-- Ambient Glow Accent -->
+          <div class="integrations-ambient-glow" aria-hidden="true"></div>
+
+          <div class="dark-card-header text-center">
+            <div class="pill-badge pill-dark">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+                <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
               </svg>
               Integrations
             </div>
-            <h2 class="section-title" style="color: #FFFFFF;">
+            <h2 class="dark-title integrations-headline">
               Works With Your<br>
-              Favorite <span class="serif-italic">Tools</span>
+              Favorite <span class="serif-italic-tools">Tools</span>
             </h2>
-            <p class="section-subtitle" style="margin-bottom: 60px;">
+            <p class="dark-subtitle integrations-subtext">
               NGD fits into your workflow, not the other way around.
             </p>
           </div>
 
-          <div class="framer-integrations-wrapper">
-            <div class="framer-lines">
-              <!-- SVG Paths -->
-              <svg class="framer-svg-lines" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet">
-                <!-- Left Top (Slack) -->
-                <path class="f-line bg-line" d="M400 200 C300 200, 200 80, 100 80" />
-                <path class="f-line anim-line anim-blue" d="M400 200 C300 200, 200 80, 100 80" />
+          <!-- Interactive Network Diagram Stage -->
+          <div class="integrations-network-stage" id="integrationsStage">
+            <!-- Connecting SVG Lines and Energy Beams -->
+            <svg class="net-svg-canvas" id="integrationsSvg" viewBox="0 0 1000 560" preserveAspectRatio="none"
+              aria-hidden="true">
+              <defs>
+                <!-- Wire Glow Filters -->
+                <filter id="wire-glow-subtle" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="2.5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <filter id="wire-glow-intense" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="5" result="blur1" />
+                  <feGaussianBlur stdDeviation="1.5" result="blur2" />
+                  <feMerge>
+                    <feMergeNode in="blur1" />
+                    <feMergeNode in="blur2" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
 
-                <!-- Left Mid (GDrive) -->
-                <path class="f-line bg-line" d="M400 200 L100 200" />
-                <path class="f-line anim-line anim-green" d="M400 200 L100 200" />
+                <!-- Tool Specific Outward Pulse Gradients (Hub -> Tools) -->
+                <linearGradient id="pulse-grad-slack" gradientUnits="userSpaceOnUse" x1="458" y1="280" x2="224"
+                  y2="120">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="35%" stop-color="#36C5F0" />
+                  <stop offset="70%" stop-color="#2EB67D" />
+                  <stop offset="100%" stop-color="#E01E5A" />
+                </linearGradient>
+                <linearGradient id="pulse-grad-jira" gradientUnits="userSpaceOnUse" x1="458" y1="280" x2="164" y2="225">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="40%" stop-color="#2684FF" />
+                  <stop offset="100%" stop-color="#0052CC" />
+                </linearGradient>
+                <linearGradient id="pulse-grad-zapier" gradientUnits="userSpaceOnUse" x1="458" y1="280" x2="159"
+                  y2="345">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="40%" stop-color="#FF8C00" />
+                  <stop offset="100%" stop-color="#FF4A00" />
+                </linearGradient>
+                <linearGradient id="pulse-grad-sheets" gradientUnits="userSpaceOnUse" x1="458" y1="280" x2="219"
+                  y2="450">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="40%" stop-color="#34A853" />
+                  <stop offset="100%" stop-color="#188038" />
+                </linearGradient>
+                <linearGradient id="pulse-grad-mailchimp" gradientUnits="userSpaceOnUse" x1="542" y1="280" x2="776"
+                  y2="120">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="40%" stop-color="#FFEAA7" />
+                  <stop offset="100%" stop-color="#FDDD4C" />
+                </linearGradient>
+                <linearGradient id="pulse-grad-dropbox" gradientUnits="userSpaceOnUse" x1="542" y1="280" x2="836"
+                  y2="225">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="40%" stop-color="#38BDF8" />
+                  <stop offset="100%" stop-color="#0F287F" />
+                </linearGradient>
+                <linearGradient id="pulse-grad-figma" gradientUnits="userSpaceOnUse" x1="542" y1="280" x2="841"
+                  y2="345">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="35%" stop-color="#1ABCFE" />
+                  <stop offset="70%" stop-color="#A259FF" />
+                  <stop offset="100%" stop-color="#FF7262" />
+                </linearGradient>
+                <linearGradient id="pulse-grad-g2" gradientUnits="userSpaceOnUse" x1="542" y1="280" x2="781" y2="450">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="40%" stop-color="#00B67A" />
+                  <stop offset="100%" stop-color="#0C5C53" />
+                </linearGradient>
+              </defs>
 
-                <!-- Left Bottom (Figma) -->
-                <path class="f-line bg-line" d="M400 200 C300 200, 200 320, 100 320" />
-                <path class="f-line anim-line anim-orange" d="M400 200 C300 200, 200 320, 100 320" />
+              <!-- 1. Background Resting Circuit Wires (From Hub Outward to Cards) -->
+              <g class="network-wires-base">
+                <path id="wire-slack" class="net-wire-base"
+                  d="M 458.0 280.0 L 454.0 280.0 C 427.5 280.0, 406.0 258.5, 406.0 232.0 L 406.0 182.0 C 406.0 147.8, 378.2 120.0, 344.0 120.0 L 224.0 120.0" />
+                <path id="wire-jira" class="net-wire-base"
+                  d="M 458.0 280.0 C 361.8 280.0, 325.2 225.0, 229.0 225.0 L 164.0 225.0" />
+                <path id="wire-zapier" class="net-wire-base"
+                  d="M 458.0 280.0 C 359.7 280.0, 322.3 345.0, 224.0 345.0 L 159.0 345.0" />
+                <path id="wire-sheets" class="net-wire-base"
+                  d="M 458.0 280.0 L 454.0 280.0 C 427.5 280.0, 406.0 301.5, 406.0 328.0 L 406.0 388.0 C 406.0 422.2, 378.2 450.0, 344.0 450.0 L 219.0 450.0" />
 
-                <!-- Right Top (Dropbox) -->
-                <path class="f-line bg-line" d="M400 200 C500 200, 600 80, 700 80" />
-                <path class="f-line anim-line anim-blue" d="M400 200 C500 200, 600 80, 700 80" />
+                <path id="wire-mailchimp" class="net-wire-base"
+                  d="M 542.0 280.0 L 546.0 280.0 C 572.5 280.0, 594.0 258.5, 594.0 232.0 L 594.0 182.0 C 594.0 147.8, 621.8 120.0, 656.0 120.0 L 776.0 120.0" />
+                <path id="wire-dropbox" class="net-wire-base"
+                  d="M 542.0 280.0 C 638.2 280.0, 674.8 225.0, 771.0 225.0 L 836.0 225.0" />
+                <path id="wire-figma" class="net-wire-base"
+                  d="M 542.0 280.0 C 640.3 280.0, 677.7 345.0, 776.0 345.0 L 841.0 345.0" />
+                <path id="wire-g2" class="net-wire-base"
+                  d="M 542.0 280.0 L 546.0 280.0 C 572.5 280.0, 594.0 301.5, 594.0 328.0 L 594.0 388.0 C 594.0 422.2, 621.8 450.0, 656.0 450.0 L 781.0 450.0" />
+              </g>
 
-                <!-- Right Mid (Github) -->
-                <path class="f-line bg-line" d="M400 200 L700 200" />
-                <path class="f-line anim-line anim-purple" d="M400 200 L700 200" />
+              <!-- 2. Active Hover Illuminated Wires -->
+              <g class="network-wires-active">
+                <path id="wire-active-slack" class="net-wire-active wire-slack-act"
+                  d="M 458.0 280.0 L 454.0 280.0 C 427.5 280.0, 406.0 258.5, 406.0 232.0 L 406.0 182.0 C 406.0 147.8, 378.2 120.0, 344.0 120.0 L 224.0 120.0" />
+                <path id="wire-active-jira" class="net-wire-active wire-jira-act"
+                  d="M 458.0 280.0 C 361.8 280.0, 325.2 225.0, 229.0 225.0 L 164.0 225.0" />
+                <path id="wire-active-zapier" class="net-wire-active wire-zapier-act"
+                  d="M 458.0 280.0 C 359.7 280.0, 322.3 345.0, 224.0 345.0 L 159.0 345.0" />
+                <path id="wire-active-sheets" class="net-wire-active wire-sheets-act"
+                  d="M 458.0 280.0 L 454.0 280.0 C 427.5 280.0, 406.0 301.5, 406.0 328.0 L 406.0 388.0 C 406.0 422.2, 378.2 450.0, 344.0 450.0 L 219.0 450.0" />
 
-                <!-- Right Bottom (GSheet) -->
-                <path class="f-line bg-line" d="M400 200 C500 200, 600 320, 700 320" />
-                <path class="f-line anim-line anim-yellow" d="M400 200 C500 200, 600 320, 700 320" />
-              </svg>
+                <path id="wire-active-mailchimp" class="net-wire-active wire-mailchimp-act"
+                  d="M 542.0 280.0 L 546.0 280.0 C 572.5 280.0, 594.0 258.5, 594.0 232.0 L 594.0 182.0 C 594.0 147.8, 621.8 120.0, 656.0 120.0 L 776.0 120.0" />
+                <path id="wire-active-dropbox" class="net-wire-active wire-dropbox-act"
+                  d="M 542.0 280.0 C 638.2 280.0, 674.8 225.0, 771.0 225.0 L 836.0 225.0" />
+                <path id="wire-active-figma" class="net-wire-active wire-figma-act"
+                  d="M 542.0 280.0 C 640.3 280.0, 677.7 345.0, 776.0 345.0 L 841.0 345.0" />
+                <path id="wire-active-g2" class="net-wire-active wire-g2-act"
+                  d="M 542.0 280.0 L 546.0 280.0 C 572.5 280.0, 594.0 301.5, 594.0 328.0 L 594.0 388.0 C 594.0 422.2, 621.8 450.0, 656.0 450.0 L 781.0 450.0" />
+              </g>
 
-              <!-- Nodes -->
-              <div class="f-hub">
-                <img src="images/newnex.png" alt="Hub">
+              <!-- 3. Animated Energy Beam Pulses (Flowing Outward from Hub to All Logos) -->
+              <g class="network-wires-pulse">
+                <path id="pulse-slack" class="net-wire-pulse pulse-slack"
+                  d="M 458.0 280.0 L 454.0 280.0 C 427.5 280.0, 406.0 258.5, 406.0 232.0 L 406.0 182.0 C 406.0 147.8, 378.2 120.0, 344.0 120.0 L 224.0 120.0" />
+                <path id="pulse-jira" class="net-wire-pulse pulse-jira"
+                  d="M 458.0 280.0 C 361.8 280.0, 325.2 225.0, 229.0 225.0 L 164.0 225.0" />
+                <path id="pulse-zapier" class="net-wire-pulse pulse-zapier"
+                  d="M 458.0 280.0 C 359.7 280.0, 322.3 345.0, 224.0 345.0 L 159.0 345.0" />
+                <path id="pulse-sheets" class="net-wire-pulse pulse-sheets"
+                  d="M 458.0 280.0 L 454.0 280.0 C 427.5 280.0, 406.0 301.5, 406.0 328.0 L 406.0 388.0 C 406.0 422.2, 378.2 450.0, 344.0 450.0 L 219.0 450.0" />
+
+                <path id="pulse-mailchimp" class="net-wire-pulse pulse-mailchimp"
+                  d="M 542.0 280.0 L 546.0 280.0 C 572.5 280.0, 594.0 258.5, 594.0 232.0 L 594.0 182.0 C 594.0 147.8, 621.8 120.0, 656.0 120.0 L 776.0 120.0" />
+                <path id="pulse-dropbox" class="net-wire-pulse pulse-dropbox"
+                  d="M 542.0 280.0 C 638.2 280.0, 674.8 225.0, 771.0 225.0 L 836.0 225.0" />
+                <path id="pulse-figma" class="net-wire-pulse pulse-figma"
+                  d="M 542.0 280.0 C 640.3 280.0, 677.7 345.0, 776.0 345.0 L 841.0 345.0" />
+                <path id="pulse-g2" class="net-wire-pulse pulse-g2"
+                  d="M 542.0 280.0 L 546.0 280.0 C 572.5 280.0, 594.0 301.5, 594.0 328.0 L 594.0 388.0 C 594.0 422.2, 621.8 450.0, 656.0 450.0 L 781.0 450.0" />
+              </g>
+            </svg>
+
+            <!-- Center Hub Node (NexGen Dev Logo) -->
+            <div class="net-hub-container" id="netHub" tabindex="0" role="button" aria-label="NexGen Dev Central Hub">
+              <div class="hub-pulse-aura aura-1"></div>
+              <div class="hub-pulse-aura aura-2"></div>
+              <div class="hub-squircle">
+                <img src="images/nexgen-hub-logo.png" alt="NexGen Dev" class="hub-nexgen-logo">
               </div>
+              <div class="node-tooltip">NexGen Dev Hub • All Connected</div>
+            </div>
 
-              <!-- Left Top -->
-              <div class="f-node node-slack" style="left: 12.5%; top: 20%;">
-                <div class="f-icon slack-icon">
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="#E01E5A" d="M6 15a2 2 0 1 1-2-2h2v2zm1 0a2 2 0 1 1 2 2v-5H7v3z" />
-                    <path fill="#36C5F0" d="M9 6a2 2 0 1 1 2-2v2H9zm0 1a2 2 0 1 1-2 2h5V7H9z" />
-                    <path fill="#2EB67D" d="M18 9a2 2 0 1 1 2 2h-2V9zm-1 0a2 2 0 1 1-2 2v5h3V9z" />
-                    <path fill="#ECB22E" d="M15 18a2 2 0 1 1-2 2v-2h2zm0-1a2 2 0 1 1 2-2h-5v3h3z" />
-                  </svg>
-                </div>
+            <!-- Left Column App Nodes -->
+            <!-- 1. Slack -->
+            <div class="net-app-node app-slack" data-target="slack">
+              <div class="app-card-inner">
+                <img src="images/l1.svg" alt="Slack" class="app-brand-svg">
               </div>
+              <div class="node-tooltip">Slack • Instant Sync</div>
+            </div>
 
-              <!-- Left Mid -->
-              <div class="f-node node-gdrive" style="left: 12.5%; top: 50%;">
-                <div class="f-icon gdrive-icon">
-                  <svg viewBox="0 0 64 64" width="24" height="24">
-                    <path fill="#2a71e9" d="M28.7 40.5L18 59h35.3L64 40.5H28.7z"/>
-                    <path fill="#fccd48" d="M61 35.3L42.7 3.6H21.3l18.3 31.7H61z"/>
-                    <path fill="#0ba25e" d="M18.3 8.8L0 40.5 10.7 59 29 27.3z"/>
-                  </svg>
-                </div>
+            <!-- 2. Jira / Atlassian -->
+            <div class="net-app-node app-jira" data-target="jira">
+              <div class="app-card-inner">
+                <img src="images/l2.svg" alt="Jira" class="app-brand-svg">
               </div>
+              <div class="node-tooltip">Jira • Issue Tracker</div>
+            </div>
 
-              <!-- Left Bottom -->
-              <div class="f-node node-figma" style="left: 12.5%; top: 80%;">
-                <div class="f-icon figma-icon">
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="#F24E1E" d="M8 3h4v4H8z" />
-                    <path fill="#FF7262" d="M12 3h4a4 4 0 0 1 0 8h-4V3z" />
-                    <path fill="#A259FF" d="M8 7h4v4H8z" />
-                    <path fill="#1ABCFE" d="M8 11h4v4H8z" />
-                    <path fill="#0ACF83" d="M12 15a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" />
-                  </svg>
-                </div>
+            <!-- 3. Zapier -->
+            <div class="net-app-node app-zapier" data-target="zapier">
+              <div class="app-card-inner">
+                <img src="images/l3.svg" alt="Zapier" class="app-brand-svg">
               </div>
+              <div class="node-tooltip">Zapier • 5,000+ Zaps</div>
+            </div>
 
-              <!-- Right Top -->
-              <div class="f-node node-dropbox" style="left: 87.5%; top: 20%;">
-                <div class="f-icon dropbox-icon">
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="#0061FF" d="M12 2.3l-5.6 3.6L12 9.5l5.6-3.6zM12 9.5l-5.6-3.6L.8 9.5 6.4 13.1zM12 9.5l5.6-3.6 5.6 3.6-5.6 3.6zM6.4 13.1l5.6 3.6 5.6-3.6 5.6 3.6-11.2 7.2-11.2-7.2z"/>
-                  </svg>
-                </div>
+            <!-- 4. Google Sheets -->
+            <div class="net-app-node app-sheets" data-target="sheets">
+              <div class="app-card-inner">
+                <img src="images/l4.svg" alt="Google Sheets" class="app-brand-svg">
               </div>
+              <div class="node-tooltip">Sheets • 2-Way Sync</div>
+            </div>
 
-              <!-- Right Mid -->
-              <div class="f-node node-github" style="left: 87.5%; top: 50%;">
-                <div class="f-icon github-icon">
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="#fff">
-                    <path
-                      d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-                  </svg>
-                </div>
+            <!-- Right Column App Nodes -->
+            <!-- 5. Mailchimp -->
+            <div class="net-app-node app-mailchimp" data-target="mailchimp">
+              <div class="app-card-inner">
+                <img src="images/r1.svg" alt="Mailchimp" class="app-brand-svg">
               </div>
+              <div class="node-tooltip">Mailchimp • Auto-Campaigns</div>
+            </div>
 
-              <!-- Right Bottom -->
-              <div class="f-node node-sheets" style="left: 87.5%; top: 80%;">
-                <div class="f-icon sheets-icon">
-                  <svg viewBox="0 0 24 24" width="24" height="24">
-                    <rect width="24" height="24" rx="4" fill="#0F9D58" />
-                    <rect x="6" y="7" width="12" height="10" rx="1" fill="#fff" />
-                    <line x1="6" y1="12" x2="18" y2="12" stroke="#0F9D58" stroke-width="1.5" />
-                    <line x1="12" y1="7" x2="12" y2="17" stroke="#0F9D58" stroke-width="1.5" />
-                  </svg>
-                </div>
+            <!-- 6. Dropbox -->
+            <div class="net-app-node app-dropbox" data-target="dropbox">
+              <div class="app-card-inner">
+                <img src="images/r2.svg" alt="Dropbox" class="app-brand-svg">
               </div>
+              <div class="node-tooltip">Dropbox • Cloud Storage</div>
+            </div>
 
+            <!-- 7. Figma -->
+            <div class="net-app-node app-figma" data-target="figma">
+              <div class="app-card-inner">
+                <img src="images/r3.svg" alt="Figma" class="app-brand-svg">
+              </div>
+              <div class="node-tooltip">Figma • Design Sync</div>
+            </div>
+
+            <!-- 8. Glassdoor / G2 -->
+            <div class="net-app-node app-g2" data-target="g2">
+              <div class="app-card-inner">
+                <img src="images/r4.svg" alt="G2" class="app-brand-svg">
+              </div>
+              <div class="node-tooltip">G2 • Review Monitor</div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </section>
 
     <!-- TESTIMONIALS SECTION -->
@@ -1683,7 +1986,7 @@
           <div class="footer-nav-row">
             <a href="#features" class="footer-link">Product</a>
             <a href="#about" class="footer-link">Company</a>
-            <a href="#faq" class="footer-link">Blog</a>
+            <a href="contact.html" class="footer-link">Contact</a>
             <a href="#faq" class="footer-link">FAQs</a>
           </div>
 
