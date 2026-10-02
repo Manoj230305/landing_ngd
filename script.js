@@ -639,6 +639,78 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', updateNetworkPaths);
   }
 
+  /* --------------------------------------------------------------------------
+     14. Sticky Header Dynamic Scrolled State & Nav Active State
+     -------------------------------------------------------------------------- */
+  const siteHeader = document.getElementById('siteHeader');
+  if (siteHeader) {
+    const onScrollHeader = () => {
+      if (window.scrollY > 15) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    };
+    window.addEventListener('scroll', onScrollHeader, { passive: true });
+    onScrollHeader();
+  }
+
+  // Active section scrollspy for desktop navigation
+  const desktopNavLinks = document.querySelectorAll('.nav-links .nav-link:not(.dropdown-toggle)');
+  if (desktopNavLinks.length > 0) {
+    const navSections = ['features', 'integrations', 'pricing'].map(id => ({
+      id,
+      el: document.getElementById(id)
+    })).filter(item => item.el !== null);
+
+    if (navSections.length > 0) {
+      let isManualScroll = false;
+      let manualTimeout;
+
+      desktopNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          desktopNavLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+          isManualScroll = true;
+          clearTimeout(manualTimeout);
+          manualTimeout = setTimeout(() => {
+            isManualScroll = false;
+          }, 800);
+        });
+      });
+
+      const onScrollSpy = () => {
+        if (isManualScroll) return;
+        const scrollPosition = window.scrollY + 140;
+        let currentId = '';
+
+        for (let i = 0; i < navSections.length; i++) {
+          const sec = navSections[i];
+          const top = sec.el.offsetTop;
+          const height = sec.el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            currentId = sec.id;
+            break;
+          }
+        }
+
+        if (currentId) {
+          desktopNavLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === '#' + currentId || href.endsWith('#' + currentId)) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      };
+
+      window.addEventListener('scroll', onScrollSpy, { passive: true });
+    }
+  }
+
 });
+
 
 
