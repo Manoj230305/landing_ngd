@@ -5263,39 +5263,64 @@ section {
   }
 
   .preview-collab {
-    height: 210px;
+    height: 230px;
   }
 
   .collab-center-wrap {
-    width: 125px;
+    width: 110px;
+    top: 40px;
   }
 
   .collab-line {
-    display: none;
+    display: block;
+    width: 38px;
+    height: 24px;
+    opacity: 0.95;
+  }
+
+  .collab-line-tl {
+    top: 66px;
+    left: calc(50% - 88px);
+  }
+
+  .collab-line-bl {
+    top: 124px;
+    left: calc(50% - 88px);
+  }
+
+  .collab-line-tr {
+    top: 66px;
+    left: calc(50% + 50px);
+  }
+
+  .collab-line-br {
+    top: 124px;
+    left: calc(50% + 50px);
   }
 
   .collab-chip {
-    width: 78px;
+    width: 62px;
+    display: block;
   }
 
   .chip-comment {
-    left: 8px;
-    top: 18px;
+    left: calc(50% - 146px);
+    top: 56px;
   }
 
   .chip-attach {
-    left: 8px;
-    bottom: 18px;
+    left: calc(50% - 146px);
+    top: 122px;
   }
 
   .chip-assignee {
-    right: 8px;
-    top: 18px;
+    left: calc(50% + 84px);
+    top: 56px;
   }
 
   .chip-timeline {
-    right: 8px;
-    bottom: 18px;
+    left: calc(50% + 84px);
+    top: 122px;
   }
 
   .preview-deadlines,
