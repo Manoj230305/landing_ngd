@@ -169,12 +169,124 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --------------------------------------------------------------------------
-     4. Testimonial Carousel Slider
+     Hero Mockup Scroll Zoom & Enlargement Effect
+     Seamless physics-based zoom on scroll down (enlarges image) and
+     reverses smoothly on scroll up (shrinks back).
+     Targets the mockup dashboard image directly below 'Based on 25,000+ reviews'.
+     -------------------------------------------------------------------------- */
+  const heroMockupCard = document.getElementById('heroMockupCard');
+  const heroGlowBg = document.querySelector('.hero-glow-bg');
+  const heroSection = document.getElementById('hero');
+
+  if (heroMockupCard) {
+    // Respect accessibility settings
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      let currentProgress = 0;
+      let targetProgress = 0;
+      let animationFrameId = null;
+
+      // Dynamic scroll threshold: zooms seamlessly as hero scrolls through viewport
+      function getScrollRange() {
+        const heroHeight = heroSection ? heroSection.offsetHeight : 1100;
+        // Range spans across 65% of hero height, capped comfortably between 480px and 850px
+        return Math.min(Math.max(heroHeight * 0.65, 480), 850);
+      }
+
+      function computeTargetProgress() {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const range = getScrollRange();
+        return Math.min(Math.max(scrollY / range, 0), 1);
+      }
+
+      function renderFrame() {
+        // Silky exponential lerp damping (0.082 provides luxurious inertia and no stepping)
+        const lerpFactor = 0.082;
+        currentProgress += (targetProgress - currentProgress) * lerpFactor;
+
+        // Threshold check to snap cleanly and stop the RAF loop when idle
+        const diff = Math.abs(targetProgress - currentProgress);
+        if (diff < 0.0004) {
+          currentProgress = targetProgress;
+        }
+
+        // Responsive scale and perspective pitch parameters
+        const isMobile = window.innerWidth <= 768;
+        const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+
+        // Made noticeably smaller at rest (0.78) and enlarges cleanly to full bounds (1.00)
+        // so it never crosses the section boundary, overlaps, or gets cut off
+        const startScale = isMobile ? 0.82 : (isTablet ? 0.80 : 0.78);
+        const endScale   = isMobile ? 0.96 : (isTablet ? 0.98 : 1.00);
+        const startTilt  = isMobile ? 4.0  : 7.5; // subtle 3D perspective pitch in degrees
+        const endTilt    = 0.0;                   // levels out flat to the screen
+
+        // Smooth cubic ease-out curve for natural visual momentum
+        const eased = 1 - Math.pow(1 - currentProgress, 2.2);
+
+        const scale = startScale + (endScale - startScale) * eased;
+        const tilt  = startTilt + (endTilt - startTilt) * eased;
+
+        // 3D hardware-accelerated transform
+        heroMockupCard.style.transform = `scale3d(${scale.toFixed(4)}, ${scale.toFixed(4)}, 1) rotateX(${tilt.toFixed(2)}deg)`;
+
+        // Dynamic depth: box shadow expands and deepens as image enlarges towards the viewer
+        const shadowY     = (24 + 30 * eased).toFixed(1);
+        const shadowBlur  = (55 + 45 * eased).toFixed(1);
+        const shadowAlpha = (0.13 + 0.10 * eased).toFixed(3);
+        heroMockupCard.style.boxShadow = `0 ${shadowY}px ${shadowBlur}px -20px rgba(0, 0, 0, ${shadowAlpha}), 0 12px 28px -10px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0, 0, 0, 0.05)`;
+
+        // Synchronized ambient glow enlargement and brightness behind mockup
+        if (heroGlowBg) {
+          const glowScale   = (0.80 + 0.20 * eased).toFixed(4);
+          const glowOpacity = (0.65 + 0.22 * eased).toFixed(3);
+          heroGlowBg.style.transform = `translateX(-50%) scale(${glowScale})`;
+          heroGlowBg.style.opacity = glowOpacity;
+        }
+
+        // Continue running until perfectly converged, then sleep
+        if (diff >= 0.0004) {
+          animationFrameId = requestAnimationFrame(renderFrame);
+        } else {
+          animationFrameId = null;
+        }
+      }
+
+      function handleScroll() {
+        targetProgress = computeTargetProgress();
+        if (!animationFrameId) {
+          animationFrameId = requestAnimationFrame(renderFrame);
+        }
+      }
+
+      function handleResize() {
+        targetProgress = computeTargetProgress();
+        if (!animationFrameId) {
+          animationFrameId = requestAnimationFrame(renderFrame);
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('resize', handleResize, { passive: true });
+
+      // Initialize instantly on page load (snap currentProgress so no jarring jumps)
+      targetProgress = computeTargetProgress();
+      currentProgress = targetProgress;
+      renderFrame();
+    }
+  }
+
+  /* --------------------------------------------------------------------------
+     4. Testimonial Carousel Slider (Auto-advancing card by card every 3.5s)
      -------------------------------------------------------------------------- */
   const testimonialTrack = document.getElementById('testimonialTrack');
   const prevBtn = document.getElementById('prevTestimonial');
   const nextBtn = document.getElementById('nextTestimonial');
+  const testimonialWrap = document.querySelector('.testimonial-carousel-wrap');
   let currentIdx = 0;
+  let autoPlayTimer = null;
+  const AUTOPLAY_INTERVAL = 3500; // Auto moves card by card every 3.5 seconds
 
   function getVisibleCardsCount() {
     if (window.innerWidth <= 768) return 1;
@@ -189,7 +301,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const visibleCards = getVisibleCardsCount();
     const maxIdx = Math.max(0, cards.length - visibleCards);
-    if (currentIdx > maxIdx) currentIdx = maxIdx;
+    if (currentIdx > maxIdx) currentIdx = 0;
+    if (currentIdx < 0) currentIdx = maxIdx;
 
     const cardWidth = cards[0].offsetWidth;
     const gap = 24;
@@ -198,68 +311,118 @@ document.addEventListener('DOMContentLoaded', () => {
     testimonialTrack.style.transform = `translateX(-${shift}px)`;
   }
 
-  if (prevBtn && nextBtn && testimonialTrack) {
-    nextBtn.addEventListener('click', () => {
-      const cards = testimonialTrack.querySelectorAll('.testimonial-card');
-      const visibleCards = getVisibleCardsCount();
-      const maxIdx = Math.max(0, cards.length - visibleCards);
-      if (currentIdx < maxIdx) {
-        currentIdx++;
-      } else {
-        currentIdx = 0;
-      }
-      updateCarousel();
-    });
+  function advanceNextCard() {
+    if (!testimonialTrack) return;
+    const cards = testimonialTrack.querySelectorAll('.testimonial-card');
+    const visibleCards = getVisibleCardsCount();
+    const maxIdx = Math.max(0, cards.length - visibleCards);
+    if (currentIdx < maxIdx) {
+      currentIdx++;
+    } else {
+      currentIdx = 0;
+    }
+    updateCarousel();
+  }
 
-    prevBtn.addEventListener('click', () => {
-      const cards = testimonialTrack.querySelectorAll('.testimonial-card');
-      const visibleCards = getVisibleCardsCount();
-      const maxIdx = Math.max(0, cards.length - visibleCards);
-      if (currentIdx > 0) {
-        currentIdx--;
-      } else {
-        currentIdx = maxIdx;
-      }
-      updateCarousel();
-    });
+  function advancePrevCard() {
+    if (!testimonialTrack) return;
+    const cards = testimonialTrack.querySelectorAll('.testimonial-card');
+    const visibleCards = getVisibleCardsCount();
+    const maxIdx = Math.max(0, cards.length - visibleCards);
+    if (currentIdx > 0) {
+      currentIdx--;
+    } else {
+      currentIdx = maxIdx;
+    }
+    updateCarousel();
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    autoPlayTimer = setInterval(advanceNextCard, AUTOPLAY_INTERVAL);
+  }
+
+  function stopAutoplay() {
+    if (autoPlayTimer) {
+      clearInterval(autoPlayTimer);
+      autoPlayTimer = null;
+    }
+  }
+
+  function resetAutoplay() {
+    stopAutoplay();
+    startAutoplay();
+  }
+
+  if (testimonialTrack) {
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        advanceNextCard();
+        resetAutoplay();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        advancePrevCard();
+        resetAutoplay();
+      });
+    }
+
+    // Pause autoplay on mouse hover, resume on mouse leave
+    if (testimonialWrap) {
+      testimonialWrap.addEventListener('mouseenter', stopAutoplay);
+      testimonialWrap.addEventListener('mouseleave', startAutoplay);
+    } else {
+      testimonialTrack.addEventListener('mouseenter', stopAutoplay);
+      testimonialTrack.addEventListener('mouseleave', startAutoplay);
+    }
 
     // Touch Swipe Gesture for Mobile & Tablets
     let touchStartX = 0;
     let touchEndX = 0;
 
     testimonialTrack.addEventListener('touchstart', (e) => {
+      stopAutoplay();
       touchStartX = e.changedTouches[0].screenX;
     }, { passive: true });
 
     testimonialTrack.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
       handleSwipe();
+      startAutoplay();
     }, { passive: true });
 
     function handleSwipe() {
       const diff = touchStartX - touchEndX;
-      const cards = testimonialTrack.querySelectorAll('.testimonial-card');
-      const visibleCards = getVisibleCardsCount();
-      const maxIdx = Math.max(0, cards.length - visibleCards);
-
       if (Math.abs(diff) > 40) {
-        if (diff > 0 && currentIdx < maxIdx) {
-          // Swiped left -> show next
-          currentIdx++;
-          updateCarousel();
-        } else if (diff < 0 && currentIdx > 0) {
-          // Swiped right -> show prev
-          currentIdx--;
-          updateCarousel();
+        if (diff > 0) {
+          advanceNextCard();
+        } else {
+          advancePrevCard();
         }
+        resetAutoplay();
       }
     }
+
+    // Pause autoplay when document is in background/tab switched
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoplay();
+      } else {
+        startAutoplay();
+      }
+    });
 
     let resizeTimer;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(updateCarousel, 100);
     });
+
+    // Start autoplay initially
+    startAutoplay();
+    updateCarousel();
   }
 
   /* --------------------------------------------------------------------------
@@ -339,19 +502,103 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
-     8. Seamless Collaboration Card In-View Animation
+  /* --------------------------------------------------------------------------
+     8. Framer-Style Staggered Scroll Reveal System (like allly.framer.website)
+     Continuous fluid single-motion reveal — no discrete steps or hesitation
      -------------------------------------------------------------------------- */
-  const collabPreview = document.querySelector('.preview-collab');
-  if (collabPreview && 'IntersectionObserver' in window) {
-    const collabObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          collabPreview.classList.add('revealed');
+  if ('IntersectionObserver' in window) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!prefersReducedMotion) {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.05
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const target = entry.target;
+            target.classList.add('in-view', 'reveal', 'visible', 'revealed');
+            
+            // Clean up entrance lock after animation completes so hover transforms & accordion clicks remain snappy
+            const delaySec = parseFloat(target.style.transitionDelay || target.style.animationDelay || '0');
+            setTimeout(() => {
+              target.classList.remove('framer-reveal');
+              target.classList.add('revealed-done');
+              target.style.transitionDelay = '';
+              target.style.animationDelay = '';
+            }, Math.round((delaySec * 1000) + 750));
+
+            observer.unobserve(target);
+          }
+        });
+      }, observerOptions);
+
+      // Select all sections below hero, plus the footer
+      const sectionContainers = document.querySelectorAll(
+        'section:not(.hero-section), footer.site-footer'
+      );
+
+      const revealSelectors = [
+        '.section-header > *',
+        '.dark-card-header > *',
+        '.about-header > *',
+        '.comparison-header > *',
+        '.overview-header > *',
+        '.logos-heading',
+        '.marquee-wrapper',
+        '.bento-card',
+        '.feature-pills-mask-wrapper',
+        '.stats-banner-card',
+        '.integrations-network-stage',
+        '.testimonial-card',
+        '.carousel-nav-btns',
+        '.stat-item',
+        '.pricing-card',
+        '.about-card',
+        '.comp-card-wrapper',
+        '.comp-vs-badge',
+        '.comp-cta',
+        '.overview-mockup-wrapper',
+        '.overview-feature-col',
+        '.spotlight-stars',
+        '.spotlight-quote',
+        '.spotlight-author',
+        '.faq-left > *',
+        '.accordion-item',
+        '.faq-contact-card',
+        '.final-cta-card',
+        '.footer-newsletter',
+        '.footer-brand',
+        '.footer-right'
+      ].join(', ');
+
+      sectionContainers.forEach(section => {
+        const items = section.querySelectorAll(revealSelectors);
+
+        if (items.length) {
+          items.forEach((item, index) => {
+            item.classList.add('framer-reveal');
+            // Subtle micro-ripple: 0.04s between consecutive elements, capped at 0.20s
+            const delay = Math.min(index * 0.04, 0.20);
+            item.style.transitionDelay = `${delay.toFixed(2)}s`;
+            item.style.animationDelay = `${delay.toFixed(2)}s`;
+            revealObserver.observe(item);
+          });
         }
       });
-    }, { threshold: 0.25 });
 
-    collabObserver.observe(collabPreview);
+      // Also observe any elements manually tagged with .hidden or .reveal
+      document.querySelectorAll('.hidden:not(.framer-reveal):not(.revealed-done), .reveal:not(.framer-reveal):not(.revealed-done), .scroll-reveal:not(.framer-reveal):not(.revealed-done)').forEach((el, index) => {
+        el.classList.add('framer-reveal');
+        const delay = Math.min(index * 0.04, 0.20);
+        el.style.transitionDelay = `${delay.toFixed(2)}s`;
+        el.style.animationDelay = `${delay.toFixed(2)}s`;
+        revealObserver.observe(el);
+      });
+    }
   }
 
   /* --------------------------------------------------------------------------
