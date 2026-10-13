@@ -188,16 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
       let animationFrameId = null;
 
       // Dynamic scroll threshold: zooms seamlessly as hero scrolls through viewport
-      function getScrollRange() {
+      let cachedScrollRange = 650;
+      function updateScrollRange() {
         const heroHeight = heroSection ? heroSection.offsetHeight : 1100;
         // Range spans across 65% of hero height, capped comfortably between 480px and 850px
-        return Math.min(Math.max(heroHeight * 0.65, 480), 850);
+        cachedScrollRange = Math.min(Math.max(heroHeight * 0.65, 480), 850);
       }
+      updateScrollRange();
 
       function computeTargetProgress() {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-        const range = getScrollRange();
-        return Math.min(Math.max(scrollY / range, 0), 1);
+        return Math.min(Math.max(scrollY / cachedScrollRange, 0), 1);
       }
 
       function renderFrame() {
@@ -261,6 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       function handleResize() {
+        updateScrollRange();
         targetProgress = computeTargetProgress();
         if (!animationFrameId) {
           animationFrameId = requestAnimationFrame(renderFrame);
@@ -638,6 +640,77 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------------------------------
+     9b. Overview Section: Breadthwise Elongation & Flying Widgets on Scroll
+     -------------------------------------------------------------------------- */
+  const overviewCard = document.querySelector('.overview-card');
+  const overviewStage = document.querySelector('.overview-mockup-stage');
+  if (overviewCard && overviewStage) {
+    const widgets = overviewStage.querySelectorAll('.overview-float-widget');
+    const workSummary = overviewStage.querySelector('.widget-work-summary');
+    const taskCard = overviewStage.querySelector('.widget-task-card');
+
+    // 1. Entrance Observer: gradual fly-up from below
+    if ('IntersectionObserver' in window) {
+      const overviewEntranceObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            overviewCard.classList.add('in-view', 'revealed');
+            overviewStage.classList.add('in-view', 'revealed');
+            widgets.forEach(w => w.classList.add('in-view', 'revealed'));
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.08
+      });
+      overviewEntranceObserver.observe(overviewCard);
+    } else {
+      overviewCard.classList.add('in-view', 'revealed');
+      overviewStage.classList.add('in-view', 'revealed');
+      widgets.forEach(w => w.classList.add('in-view', 'revealed'));
+    }
+
+    // 2. Smooth Continuous Widget Parallax Fly-Over
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+      let overviewTicking = false;
+
+      function updateOverviewScroll() {
+        const rect = overviewCard.getBoundingClientRect();
+        const winHeight = window.innerHeight;
+
+        // Active whenever card is near or within the viewport
+        if (rect.bottom > -150 && rect.top < winHeight + 150) {
+          // Flying Widgets Scroll Parallax Offset
+          const centerDiff = (rect.top + rect.height * 0.5) - (winHeight * 0.5);
+          if (workSummary) {
+            const py1 = Math.max(-42, Math.min(42, centerDiff * 0.06));
+            workSummary.style.setProperty('--widget-parallax-y', `${py1.toFixed(1)}px`);
+          }
+          if (taskCard) {
+            const py2 = Math.max(-54, Math.min(54, centerDiff * 0.08));
+            taskCard.style.setProperty('--widget-parallax-y', `${py2.toFixed(1)}px`);
+          }
+        }
+        overviewTicking = false;
+      }
+
+      function onOverviewScroll() {
+        if (!overviewTicking) {
+          overviewTicking = true;
+          window.requestAnimationFrame(updateOverviewScroll);
+        }
+      }
+
+      window.addEventListener('scroll', onOverviewScroll, { passive: true });
+      window.addEventListener('resize', onOverviewScroll, { passive: true });
+      updateOverviewScroll();
+    }
+  }
+
+  /* --------------------------------------------------------------------------
      10. Contact Form Submission & Reset
      -------------------------------------------------------------------------- */
   const contactForm = document.getElementById('contactForm');
@@ -913,6 +986,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (navSections.length > 0) {
       let isManualScroll = false;
       let manualTimeout;
+      let cachedSectionBounds = [];
+
+      function cacheSectionBounds() {
+        cachedSectionBounds = navSections.map(sec => ({
+          id: sec.id,
+          top: sec.el.offsetTop,
+          height: sec.el.offsetHeight
+        }));
+      }
+      cacheSectionBounds();
+      window.addEventListener('resize', cacheSectionBounds, { passive: true });
 
       desktopNavLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -922,40 +1006,63 @@ document.addEventListener('DOMContentLoaded', () => {
           clearTimeout(manualTimeout);
           manualTimeout = setTimeout(() => {
             isManualScroll = false;
-          }, 800);
+          }, 850);
         });
       });
 
+      let spyTicking = false;
       const onScrollSpy = () => {
-        if (isManualScroll) return;
-        const scrollPosition = window.scrollY + 140;
-        let currentId = '';
+        if (isManualScroll || spyTicking) return;
+        spyTicking = true;
+        window.requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY + 140;
+          let currentId = '';
 
-        for (let i = 0; i < navSections.length; i++) {
-          const sec = navSections[i];
-          const top = sec.el.offsetTop;
-          const height = sec.el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            currentId = sec.id;
-            break;
-          }
-        }
-
-        if (currentId) {
-          desktopNavLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === '#' + currentId || href.endsWith('#' + currentId)) {
-              link.classList.add('active');
-            } else {
-              link.classList.remove('active');
+          for (let i = 0; i < cachedSectionBounds.length; i++) {
+            const sec = cachedSectionBounds[i];
+            if (scrollPosition >= sec.top && scrollPosition < sec.top + sec.height) {
+              currentId = sec.id;
+              break;
             }
-          });
-        }
+          }
+
+          if (currentId) {
+            desktopNavLinks.forEach(link => {
+              const href = link.getAttribute('href');
+              if (href === '#' + currentId || href.endsWith('#' + currentId)) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+          spyTicking = false;
+        });
       };
 
       window.addEventListener('scroll', onScrollSpy, { passive: true });
     }
   }
+
+  // Smooth animated anchor link scrolling with header offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const hash = this.getAttribute('href');
+      if (hash && hash.startsWith('#') && hash.length > 1) {
+        const target = document.querySelector(hash);
+        if (target) {
+          e.preventDefault();
+          const headerOffset = 90;
+          const elementPos = target.getBoundingClientRect().top;
+          const offsetPos = elementPos + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPos,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  });
 
 });
 
