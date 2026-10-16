@@ -3669,13 +3669,13 @@ input:checked+.slider:before {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 28px 75px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.09);
+  box-shadow: 0 18px 45px -12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.09);
   background: #FFFFFF;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
 }
 
 .overview-mockup-stage:hover .overview-board-container {
-  box-shadow: 0 34px 85px -15px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.14);
+  box-shadow: 0 22px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .overview-board-img {
@@ -3718,7 +3718,7 @@ input:checked+.slider:before {
   user-select: none;
 }
 
-/* Inner Tilt & Floating Levitation Container - With prominent light grey border */
+/* Inner Tilt & Floating Levitation Container - With refined, clean shadow */
 .overview-widget-float-inner {
   display: block;
   width: 100%;
@@ -3727,14 +3727,15 @@ input:checked+.slider:before {
   border-radius: 20px;
   border: 3.5px solid #d2d6dc;
   background: #18191c;
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 26px 48px rgba(0, 0, 0, 0.65), 0 8px 18px rgba(0, 0, 0, 0.42);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 12px 24px -4px rgba(0, 0, 0, 0.32), 0 4px 10px -2px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.45s ease, border-color 0.3s ease;
-  will-change: transform, filter;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, filter 0.45s ease, border-color 0.3s ease;
+  will-change: transform, box-shadow;
 }
 
 .overview-widget-float-inner:hover {
   border-color: #f1f3f6;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 16px 28px -6px rgba(0, 0, 0, 0.38), 0 6px 12px -3px rgba(0, 0, 0, 0.22);
 }
 
 .overview-widget-float-inner .overview-widget-img {
@@ -3763,8 +3764,9 @@ input:checked+.slider:before {
 }
 
 .widget-work-summary:hover .overview-widget-float-inner {
-  transform: translateY(-12px) scale(1.035) rotate(-2deg);
-  filter: drop-shadow(0 38px 65px rgba(0, 0, 0, 0.8)) drop-shadow(0 14px 28px rgba(0, 0, 0, 0.52));
+  transform: translateY(-8px) scale(1.025) rotate(-2deg);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 16px 28px -6px rgba(0, 0, 0, 0.38), 0 6px 12px -3px rgba(0, 0, 0, 0.22);
+  filter: none;
 }
 
 /* Floating Widget 2: High Task Card (Bottom-Right) - Tilted Right with Organic Float */
@@ -3786,8 +3788,9 @@ input:checked+.slider:before {
 }
 
 .widget-task-card:hover .overview-widget-float-inner {
-  transform: translateY(-12px) scale(1.035) rotate(2deg);
-  filter: drop-shadow(0 38px 65px rgba(0, 0, 0, 0.8)) drop-shadow(0 14px 28px rgba(0, 0, 0, 0.52));
+  transform: translateY(-8px) scale(1.025) rotate(2deg);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22), 0 16px 28px -6px rgba(0, 0, 0, 0.38), 0 6px 12px -3px rgba(0, 0, 0, 0.22);
+  filter: none;
 }
 
 /* Keyframes: Left tilted organic float with longer vertical stroke length */
