@@ -3419,19 +3419,23 @@ input:checked+.slider:before {
 /* V/S Connecting Badge (Desktop) */
 .comp-vs-badge {
   position: absolute;
-  top: 172px;
+  top: 188px;
   left: 50%;
   transform: translateX(-50%);
-  width: 82px;
-  height: 61px;
+  width: 64px;
+  height: 44px;
   z-index: 10;
   pointer-events: none;
-}
-
-.comp-vs-badge img {
-  width: 100%;
-  height: 100%;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  background: #1a1a1a;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
 }
 
 .comp-vs-mobile {
