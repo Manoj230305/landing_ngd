@@ -3410,32 +3410,83 @@ input:checked+.slider:before {
   flex-direction: row;
   justify-content: center;
   align-items: stretch;
-  gap: 70px;
+  gap: 96px;
   width: 100%;
   position: relative;
   margin: 48px auto;
 }
 
-/* V/S Connecting Badge (Desktop) */
-.comp-vs-badge {
+/* V/S Connecting Badge & Circuit Wire (Desktop) */
+.comp-vs-connector {
   position: absolute;
-  top: 188px;
+  top: 164px;
   left: 50%;
   transform: translateX(-50%);
-  width: 64px;
-  height: 44px;
+  width: 96px;
+  height: 52px;
   z-index: 10;
   pointer-events: none;
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.comp-connector-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 96px;
+  height: 52px;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.comp-wire-left {
+  stroke: #cbd5e1;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.comp-node-left {
+  fill: #ffffff;
+  stroke: #cbd5e1;
+  stroke-width: 1.5;
+}
+
+.comp-wire-right {
+  stroke: #38bdf8;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.comp-node-right {
+  fill: #ffffff;
+  stroke: #38bdf8;
+  stroke-width: 1.5;
+}
+
+.comp-vs-badge {
+  position: relative;
+  z-index: 2;
+  height: 32px;
+  padding: 0 15px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: 999px;
-  background: #1a1a1a;
+  background: #18181b;
   color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.35), 0 3px 12px rgba(0, 0, 0, 0.22);
+  user-select: none;
 }
 
 .comp-vs-mobile {
@@ -5094,26 +5145,17 @@ section {
 
   .comp-container {
     flex-direction: row;
-    gap: 16px;
+    gap: 96px;
     justify-content: center;
     margin: 32px auto;
   }
 
   .comp-card-wrapper {
-    flex: 1;
-    max-width: 440px;
+    width: 375px;
+    max-width: calc((100% - 96px) / 2);
   }
 
-  .comp-card-header {
-    height: 160px;
-    padding: 22px;
-  }
-
-  .comp-card-title {
-    font-size: 26px;
-  }
-
-  .comp-vs-badge {
+  .comp-vs-connector {
     display: flex;
   }
 
@@ -5250,21 +5292,23 @@ section {
     gap: 20px;
   }
 
+  .comp-vs-connector,
   .comp-vs-badge {
-    display: none;
+    display: none !important;
   }
 
   .comp-vs-mobile {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #1a1a1a;
+    background: #111215;
     color: #ffffff;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.05em;
     padding: 6px 14px;
     border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
